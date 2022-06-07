@@ -1,7 +1,8 @@
 # Linear Algebra Done Right
 Traduction du livre *Linear Algebra Done Right*
-### Chapitre 1 _Vector Space_
+### Sommaire 
 
-### Chapitre 1 _Vector Space_
-
-### Chapitre 1 _Vector Space_
+#### Chapitre 1 : _Vector Space_
+#### Chapitre 2 : _Finite Vector_
+#### Chapitre 3 : _Linear Maps
+#### Chapitre 4 : _Polynomial_

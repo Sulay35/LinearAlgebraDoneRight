@@ -1,6 +1,7 @@
 # Linear Algebra Done Right
 Traduction du livre *Linear Algebra Done Right* écrit par _Sheldon Axler_
 
+**Livre dans le fichier main**
 
 ### Sommaire 
 #### Chapitre 1 : _Espaces vectoriels_

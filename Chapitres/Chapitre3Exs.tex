@@ -1,0 +1,28 @@
+\documentclass[12pt]{book}
+\usepackage{stylepackage}
+\begin{document}
+\section*{Exercices}
+\begin{enumerate}
+    \item Montrez que toutes les applications linéaires d'un espace vectoriel à une dimension vers ce même espace est la multiplication par un scalaire. Plus précisément, prouvez que si dim$E=1$ et $T\in\mathcal{L}(E,E)$, alors il existe $a\in\K$ tel que $Tv=av$ pour tout $v\in E$
+    \item Donnez un exemple d'une fonction $f\colon\R^2\rightarrow\R$ telle que 
+    \begin{equation*}
+        f(av)=af(v)
+    \end{equation*}
+    pour tout $a\in\R$ et tout $v\in\R^2$ mais $f$ n'est pas linéaire.
+    \marginpar{\flushleft{L'exercice 2 montre que l'homogénéité seule n'est pas suffisante pour impliquer qu'une fonction est une application linéaire. L'additivité seule n'est pas suffisante pour  impliquer qu'une fonction est une application linéaire, cependant les preuves de ces résultats demandent des outils avancés qui dépasse ceux de ce livre.}}
+    \item Supposons que $E$ de dimension finie. Prouvez que pour toute application linéaire d'un sous-espace vectoriel de $E$ peut être étendue à une application linéaire sur $E$. En d'autres termes, montrez que si $G$ est un sous-espace vectoriel de $E$ et $S\in\mathcal{L}(G,F)$, alors il existe $T\in\mathcal{L}(E,F)$ tel que $Tu=Su$ pour tout $u\in G$.
+    \item Supposons que $T$ est une application linéaire de $E$ dans $\K$. Prouvez que si $u\in E$ n'est pas dans \textit{Ker}$(T)$, alors
+    \begin{equation*}
+       E=\textrm{\textit{Ker}}(T)\oplus\{au\colon a\in \K\}.
+    \end{equation*}
+    \item Supposons que $T\in\mathcal{L}(E,F)$ est injective et que $(v_1,\ldots,v_n)$ est une famille libre dans $E$. Montrez que $(Tv_1,\ldots,Tv_n)$ est libre dans $F$.
+    \item Prouvez que si $S_1,\ldots,S_n$ sont des applications linéaires injectives telles que $S_1\ldots S_n$ soit cohérent, alors l'application $S_1\ldots S_n$ est injective.
+    \item Prouvez que si $(v_1,\ldots,v_n)$ engendre $E$ et $T\in\mathcal{L}(E,F)$ est surjective, alors $(Tv_1,\ldots,Tv_n)$ engendre $F$.
+    \item Supposons que $E$ est de dimension finie et que $T\in\mathcal{L}(E,F)$. Montrez qu'il existe un sous-espace vectoriel $G$ de $E$ tel que $G\cap\textrm{\textit{Ker}}(T)=\{0\}$ et $\textrm{\textit{Ker}}(T)=\{Tu\colon u\in G\}$
+    \item Montrez que si $T$ est une application linéaire de $\K^4$ dans $\K^2$ telle que 
+    \begin{equation*}
+        \textrm{\textit{Ker}}(T)=\{(x_1,x_2,x_3,x_4)\in\K^4\colon x_1=5x_2 et x_3=7x_4\},
+    \end{equation*}
+    alors $T$ est surjective.
+\end{enumerate}
+\end{document}

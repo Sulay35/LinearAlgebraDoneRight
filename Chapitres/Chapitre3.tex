@@ -1,0 +1,768 @@
+\documentclass[12pt]{book}
+
+\usepackage{stylepackage}
+
+\begin{document}
+
+
+%            %
+% CHAPITRE 3 %
+%            %
+
+\chapter{\textmd{\textsc{\Large{Chapitre 3}}} \\ \textsl{Applications linéaires}}
+
+\vfill
+
+% INTRODUCTION
+\indent{Jusqu'ici, nous nous sommes concentré sur les espaces vectoriels. Personne n'est vraiment enthousiaste  à l'idée d'étudier les espaces vectoriels. La partie intéressante de l'algèbre linéaire est celle que nous allons maintenant aborder $-$ les applications linéaires.}
+
+\indent{Revoyons nos hypothèse :}
+
+\begin{center}
+\fbox{
+    \begin{minipage}{0.7 \textwidth}
+    \begin{center}
+        Rappelons que $F$ désigne désigne $R$ ou $C$. \\
+     Rappelons aussi que $V$ est un sous-espace vectoriel de $F$\\
+    \end{center}
+    \end{minipage}
+}
+\end{center}
+
+\indent{Dans ce chapitre nous allons fréquemment avoir besoin d'un autre espace vectoriel en plus de $V$. Nous allons appeler ce nouvel espace $W$}
+
+\begin{center}
+\fbox{
+    \begin{minipage}{0.7 \textwidth}
+    \begin{center}
+        Pour le reste du chapitre considérons que $W$ désigne un sous-espace de $F$.
+    \end{center}
+    \end{minipage}
+}
+\end{center}
+
+\vfill
+
+\begin{center}
+    \includegraphics[scale=0.1]{Asterisk.png}
+    \hfill
+    \includegraphics[scale=0.1]{Asterisk.png}
+    \hfill
+    \includegraphics[scale=0.1]{Asterisk.png}
+\end{center}
+
+    
+\pagebreak
+\newpage
+
+\section*{Définition et exemples}
+
+Une \textbf{application linéaire} de $E$ dans $F$ est une fonction $f:E \to F$ avec les propriétés suivantes :
+\marginpar{\flushright{\textit{Certains mathématiciens utilisent le terme \textbf{transformation linéaire}, qui a la même signification qu'une application linéaire }}}\\
+
+
+\smallskip\noindent 
+\textbf{additivité} \\
+\indent{pour tout $u, v \in E$, $f(u + v) = f(u) + f(v)$;}  \\
+
+\noindent 
+\textbf{homogénéité} \\
+\indent{pour tout $\lambda \in \K$, $f(\lambda u) = \lambda f(u)$;}  \\
+Notez que pour les applications linéaires, on utilise la notation $fu$ et la notation standard $f(u)$.
+L'ensemble de toutes les applications linéaires de $E$ dans $F$ est noté $\mathcal{L}(E,F)$. Voyons maintenant quelques exemples d'applications linéaires. Prenez le temps de vérifier que chacune des fonctions ci dessous est bien une application linéaire. \\
+
+\noindent 
+\textbf{zéro}
+\begin{indpar}
+En plus de ses autres utilisations, le symbole $0$ désigne une application linéaire qui prend chaque élément d'un certain espace vectoriel et donne l'élément neutre de l'addition d'un autre espace vectoriel. Plus précisément, $0 \in \mathcal{L}(E,F)$ est défini par 
+\begin{equation*}
+    0u = 0(u) =0
+\end{equation*}
+\noindent
+Notez que dans les membres de gauche, $0$ désigne la fonction de $E$ dans $F$ alors que le $0$ à droite désigne lui l'élément neutre de l'addition dans $F$. Comme d'habitude, le contexte nous permet de faire la distinction entre les nombreuses utilisation du $0$.
+\end{indpar}
+
+\noindent 
+\textbf{identité}
+\begin{indpar}
+L'\textbf{\emph{application identité}}, notée $I$, est une fonction de certains espaces vectoriels qui a pour image l'antécédent. Plus précisément, $I \in \mathcal{L}(E, F)$  est définie par 
+\begin{equation*}
+    Iu = u
+\end{equation*}
+\end{indpar}
+
+\noindent 
+\textbf{dérivation}
+\begin{indpar}
+On définit $T \in \mathcal{L}(\mathcal{P}(\R), \mathcal{P}(\R))$ par
+\begin{equation*}
+    Tp = p'.
+\end{equation*}
+Affirmer que cette fonction est une application linéaire est une autre façon de montrer un résultat basique sur la dérivation :$(f + g)' = f' + g'$ et $(\lambda f)' = \lambda f'$, pour toutes fonctions $f$ et $g$ dérivables et $\lambda$ constant.
+\end{indpar}
+\noindent
+\textbf{intégration}
+\begin{indpar}
+On définit $T \in \mathcal{L}(\mathcal{P}(\R), \R)$ par
+\begin{equation*}
+    Tp = \int_0^1p(x) dx.
+\end{equation*}
+Affirmer que cette fonction est linéaire est une autre façon de montrer un résultat simple sur l'intégration :
+\marginpar{\flushleft\textit{Même si les applications linéaires sont très présentes dans les mathématiques, elles ne sont pas aussi omniprésentes que peuvent l'imaginer certains étudiants confus qui semblent penser que $cos$ est une application linéaire de $\R$ dans $\R$ lorsqu'ils écrivent les "égalités" comme $cos2x = 2cos x$ ou encore cos(x + y) = cos(x) + cos(y)}}
+\begin{itemize}
+    \item l'intégrale d'une somme de deux fonctions est égal à la somme des intégrales des deux fonctions 
+    \begin{equation*}
+        \int_0^1f(x) + g(x) dx = \int_0^1f(x) dx + \int_0^1g(x) dx.
+    \end{equation*}
+    \item l'intégrale de la constance $\lambda$ fois une fonction est égal à la constante $\lambda$ fois l'intégrale de la fonction
+    \begin{equation*}
+        \int_0^1 \lambda f(x) dx = \lambda\int_0^1f(x) dx 
+    \end{equation*}
+\end{itemize}
+\end{indpar}
+
+\noindent
+\textbf{multiplication par \bm{$x^2$}}
+\begin{indpar}
+On définit $T \in \mathcal{L}(\mathcal{P}(\R), \R)$ par
+
+\begin{equation*}
+    (Tp)(x) = x^2p(x).
+\end{equation*}
+pour $x \in \R$.
+\end{indpar}
+
+
+\noindent
+\textbf{décalage arrière}
+\begin{indpar}
+Rappelons que $\K^{\infty}$ désigne l'espace vectoriel de toutes les ensembles d'éléments de $\K$. On définit $T \in \mathcal{L}(\K^{\infty}$, $\K^{\infty})$ par 
+\begin{equation*}
+    T(x_1, x_2, x_3, \ldots) = (x_2, x_3, \ldots).
+\end{equation*}
+\end{indpar}
+
+\noindent 
+\textbf{de \bm{$\K^n$} dans \bm{$\K^m$}}
+\begin{indpar}
+
+On définit $T \in \mathcal{L}(\K^{3}$, $\K^{2})$ par 
+\begin{equation}
+    T(x, y, z) = (2x - y +3z, 7x + 5y -6z)
+\end{equation}
+Plus généralement, on défini m et n des entiers positifs, $a_{j,k} \in \K$ pour $j = 1, \ldots, m$ et $k = 1, \ldots, n$ et on définit $T \in \mathcal{L}(\K^{n}$, $\K^{m})$ par
+\begin{equation*}
+    T(x_1, \ldots, x_n) = (a_{1,1}x_1 + \ldots + a_{1,n}x_n, \ldots, a_{m,1}x_1 + \ldots + a_{m,n}x_n).
+\end{equation*}
+Plus tard, nous verrons que toutes les applications linéaires de $\K^n$ dans $\K^m$ sont de cette forme.
+\end{indpar}
+
+\smallskip\indent{
+Supposons que $(v_1, \ldots, v_n)$ est une base de E et $T \colon E \rightarrow F$ est linéaire. Si $v \in E$, alors on peut écrire $v$ sous la forme d'une combinaison linéaire :
+\begin{equation*}
+    v = a_1v_1 + \ldots + a_nv_n
+\end{equation*}
+}
+La linéarité de $T$ implique que
+
+\begin{equation*}
+    Tv = a_1Tv_1 + \ldots + a_nTv_n
+\end{equation*}
+
+\noindent
+En particulier, les valeurs de $Tv_1,\ldots,Tv_n$ sont des valeurs de $T$ sur des vecteurs quelconques dans E.
+
+Les applications linéaires peuvent être construite de manière à prendre des vecteurs spécifiques d'une base. Plus précisément, pour une base $(v_1,\ldots,v_n)$ de E donnée et n'importe quel choix de vecteurs $w_1,\ldots,w_n \in F$, on peut construire une application linéaire $T\colon E \rightarrow F$ telle que $Tv_j=w_j$ pour $j=1,\ldots,n$. Pour faire cela, nous n'avons pas d'autre choix que de définir $T$ par 
+\begin{equation*}
+    T(a_1v_1 + \ldots + a_nv_n) = a_1w_1 + \ldots + a_nw_n
+\end{equation*}
+\noindent
+avec $a_1,\ldots,a_n$ des éléments quelconques de $\K$. Comme $(v_1,\ldots,v_n)$ est une base de $E$ alors l'équation ci-dessus définit bien une fonction $T$ de $E$ dans $F$.
+
+Maintenant nous allons faire de $\mathcal{L}(E,F)$ un espace vectoriel en définissant l'addition et le produit scalaire. Pour $S,T in \mathcal{L}(E,F)$, définissons une fonction $S + T \in  \mathcal{L}(E,F)$, comme pour la somme de deux fonctions :  
+\begin{equation*}
+    (S + T)v = Sv + Tv 
+\end{equation*}
+
+\noindent
+pour $v \in E$. Vérifiez que $S + T$ est bien une application linéaire de $E$ dans $F$ quand $S,T \in \mathcal{L}(E,F)$. Pour $a \in \K$ et $T \in \mathcal{L}(E,F)$, définissons une fonction $aT \in \mathcal{L}(E,F)$, comme pour le produit d'une fonction par un scalaire :
+\begin{equation*}
+    (aT)v = a(Tv)
+\end{equation*}
+\noindent
+pour $v \in E$. Vérifiez que $aT$ est bien une application linéaire de $E$ dans $F$ quand $a \in \K$ et $T in \mathcal{L}(E,F)$. Avec les opération que nous venons de définir, $\mathcal{L}(E,F)$ devient un espace vectoriel (comme vous pouvez le vérifier). Notez que l'élement neutre de l'addition dans $\mathcal{L}(E,F)$ est le l'application nulle $0$ définie plus tôt dans ce chapitre.
+
+Généralement, faire la multiplication de deux éléments d'un espace vectoriel n'a pas de sens. Mais pour certaines paires d'applications linéaires, un produit est utilisé. On aura alors besoin d'un troisième espace vectoriel, supposons $G$ est un sous espace vectoriel de $\K$. Si $T \in \mathcal{L}(G,E)$ et $S \in \mathcal{L}(E,F)$ alors on peut définir $ST \in \mathcal{L}(G,F)$ par
+\begin{equation*}
+    (ST)v = S(Tv)
+\end{equation*}
+pour $v \in G$. En d'autres termes, $ST$ est simplement la composition usuelle $S\circ T$ de deux fonctions, mais quand les fonctions sont linéaires, la plupart de mathématiciens préfèrent écrire $ST$ plutôt que $S\circ T$. Vérifiez que $ST$ est bien une application linéaire de $G$ dans $F$ quand $T \in \mathcal{L}(G,E)$ et $S \in \mathcal{L}(E,F)$. Notez que $ST$ est définie seulement lorsque l'ensemble d'arrivée de $T$ est l'ensemble de départ de $S$. On appelle souvent $ST$ le \textbf{produit} de $S$ et $T$. Vous pourrez vérifier qu'il a les propriétés d'un produit suivantes :\\
+
+\noindent
+\textbf{associativité}
+\begin{indpar}
+$(T_1T_2)T_3=T_1(T_2T_3)$ quand $T_1,T_2$ et $T_3$ sont des applications linéaires telles que le produit soit cohérent (c'est à dire que l'ensemble d'arrivée de $T_1$ est l'ensemble de départ de $T_2$ et l'ensemble d'arrivée de $T_2$ est l'ensemble de départ de $T_3$). 
+\end{indpar}
+
+\noindent
+\textbf{identité}
+\begin{indpar}
+$TI=T$ et $IT=T$ quand $T\in \mathcal{L}(E,F)$ (notez que dans la première équation, $I$ est l'application identité de $E$ et dans la deuxième, $I$ est l'application identité de $F$).
+\end{indpar}
+
+\noindent
+\textbf{distributivité}
+\begin{indpar}
+$(S_1 + S_2)T=S_1T + S_2T$ et $S(T_1 + T_2)=ST_1 + ST_2$ quand $T,T_1,T_2\in \mathcal{L}(G,F)$ \\
+\end{indpar}
+
+La multiplication d'applications linéaires n'est pas commutative. En d'autres termes, il n'est pas toujours vrai que $TS=ST$, mêm si les deux membres de l'équation sont cohérents. Par exemple, si $T\in \mathcal{L}(\mathcal{P}(\R),\mathcal{P}(\R))$ est l'application de dérivation définie plus tôt dans ce chapitre et $S\in \mathcal{L}(\mathcal{P}(\R),\mathcal{P}(\R))$ est l'application de multiplication par $x^2$ définie plus tôt dans ce chapitre, alors 
+\begin{equation*}
+    ((ST)p)(x) = x^2p'(x) \textrm{ mais } ((TS)p)(x) = x^2p'(x) + 2xp(x)
+\end{equation*}
+
+\noindent
+En d'autres termes, multiplier par $x^2$ puis dériver n'est pas la même chose que dériver puis multiplier par $x^2$. 
+
+\section*{Noyau et image}
+
+Pour $T \in \mathcal{L}(E,F)$, le \textbf{noyau} de T, noté \textit{Ker}($T$), est le sous-ensemble de F contenant les vecteurs que $T$ annule:
+\begin{equation*}
+    \textrm{\textit{Ker}($T$)}={v\in V \colon Tv=0}.
+\end{equation*}
+
+\marginpar{\flushright{\textit{Le terme Ker provient de \textbf{Kern} traduction de noyau en allemand.}}}
+
+Intéressons nous à quelques exemples de la section précédente. Dans l'exemple de la dérivation, on a défini $T\in \mathcal{L}(\mathcal{P}(\R),\mathcal{P}(\R))$ par $Tp=p'$. Les seules fonctions dont la dérivée est égale à la fonction zéro sont les fonctions constantes, alors dans ce cas le noyau de $T$ est égal à l'ensemble des fonctions constantes.
+
+Dans l'exemple de la multiplication par $x^2$, on a défini $T\in \mathcal{L}(\mathcal{P}(\R),\mathcal{P}(\R))$ par $(Tp)(x)=x^2p(x)$. Le seul polynôme qui vérifie $x^2p(x)=0$ pour tout $x\in\R$ est le polynôme nul 0. Dans ce cas, nous avons 
+\begin{equation*}
+    \textrm{\textit{Ker}($T$)}={0}
+\end{equation*}
+
+
+Dans l'exemple du décalage arrière, on a défini $T \in \mathcal{L}(\K^{\infty}$, $\K^{\infty})$ par 
+\begin{equation*}
+    T(x_1, x_2, x_3, \ldots) = (x_2, x_3, \ldots).
+\end{equation*}
+Il est clair que $T(x_1, x_2, x_3, \ldots)$ est égal à 0 si et seulement si $x_2, x_3, \ldots$ sont tous égaux à 0. Alors dans ce cas on a 
+
+\begin{equation*}
+    \textrm{\textit{Ker}($T$)}=\{(a,0,0,\ldots)\colon a\in\K\}
+\end{equation*}
+La proposition suivante montre que le noyau de toutes les applications linéaires est un sous-espace vectoriel de l'ensemble de départ. En particulier, 0 est le noyau de toutes les applications linéaires.
+
+\noindent
+\begin{prop}
+Si $T \in \mathcal{L}(E,F)$, alors \textit{Ker}($T$) est un sous-espace vectoriel de $E$.
+\begin{proof}
+Supposons $T \in \mathcal{L}(E,F)$. Par additivité, on a 
+\begin{equation*}
+    T(0) = T(0+0) = T(0) + T(0)
+\end{equation*}
+\noindent{
+Ce qui implique que $T(0)=0$. Ainsi $0\in \textrm{\textit{Ker}}(T)$.
+}
+
+Si $u,v\in\textrm{\textit{Ker}}(T)$, alors 
+\begin{equation*}
+    T(u+v)=T(u)+T(v)=0+0=0
+\end{equation*}
+d'où $u+v\in\textrm{\textit{Ker}}(T)$. Ainsi $\textrm{\textit{Ker}}(T)$ est stable pour l'addition.
+
+Si $u\in \textrm{\textit{Ker}}(T)$. Alors 
+\begin{equation*}
+    T(au)=aT(u)=a0=0
+\end{equation*}
+
+\noindent
+d'où $au\in \textrm{\textit{Ker}}(T)$. Ainsi, $\textrm{\textit{Ker}}(T)$ est muni de la loi de composition externe.
+
+Nous avons montré que $\textrm{\textit{Ker}}(T)$ contient 0 et est muni des lois de compositions interne et externe. Alors $\textrm{\textit{Ker}}(T)$ est un sous-espace vectoriel de $E$.
+\end{proof}
+\end{prop}
+
+Une application linéaire $T\colon E \rightarrow F$ telle que $Tv_j=w_j$ est dite \textbf{injective} si pour tout $u,v\in E$, $Tu=Tv$ implique $u=v$. La proposition suivante nous indique que l'on peut vérifier qu'une application linéaire est injective en vérifiant que 0 est le seul vecteur de $E$ qui a pour image 0 par $T$. Comme simple application de cette proposition, on voit que parmi les trois exemples d'applications linéaires dont on a calculé les noyaux (la dérivation, la multiplication par $x^2$ et le décalage arrière), seule la multiplication par $x^2$ est injective.
+
+\begin{prop}
+Soit $T \in \mathcal{L}(E,F)$. Alors $T$ est injective si et seulement si $\textrm{\textit{Ker}}(T)= \{0\}$.
+\end{prop}
+\begin{proof}
+Premièrement, supposons que $T$ est injective. On veut prouver que $\textrm{\textit{Ker}}(T)= \{0\}$. On sait déja que $\{0\}\subset\textrm{\textit{Ker}}(T)$ (par 3.1). Pour prouver l'inclusion dans l'autre sens, supposons $v \in \textrm{\textit{Ker}}(T)$. Donc 
+
+\begin{equation*}
+    T(v)=0=T(0)
+\end{equation*}
+Comme $T$ est injective, l'équation ci-dessus implique que $v=0$. Alors $\textrm{\textit{Ker}}(T)={0}$. 
+
+Pour prouver l'implication dans l'autre sens, supposons maintenant le résultat $\textrm{\textit{Ker}}(T)=0$. Nous voulons prouver que $T$ est injective. Pour cela, supposons $u,v\in V$ et $Tu=Tv$. Alors 
+
+\begin{equation*}
+    0 = Tu - Tv = T(u-v)
+\end{equation*}
+
+Donc $u-v$ est dans $\textrm{\textit{Ker}}(T)$, qui est égal à $\{0\}$. Donc $u-v=0$ ce qui implique que $u=v$. Donc $T$ est injective comme attendu.
+\end{proof}
+Pour $T \in \mathcal{L}(E,F)$, l'\textbf{image} de $T$, notée $\textrm{\textit{Im}}(T)$, est le sous-ensemble de F qui contient l'ensemble des vecteurs de la forme $Tv$ pour tout $v\in E$ :
+\begin{equation*}
+    \textrm{\textit{Im}}(T) = \{Tv\colon v\in E\}.
+\end{equation*}
+
+Par exemple, si $T\in \mathcal{L}(\mathcal{P}(\R),\mathcal{P}(\R))$  est l'application linéaire de dérivation définie par $Tp=p'$, alors $\textrm{\textit{Im}}(T) = \mathcal{P}(\R)$ car pour tout polynôme $q\in\mathcal{P}(\R)$, il existe un polynôme $p\in\mathcal{P}(\R)$ tel que $p'=q$.
+Un autre exemple, si $T\in \mathcal{L}(\mathcal{P}(\R),\mathcal{P}(\R))$ est l'application linéaire de la multiplication par $x^2$ définie par $(Tp)(x)=x^2p(x)$, alors l'image de $T$ est l'ensemble des polynômes de la forme $a_2x^2+\ldots+a_mx^m$, avec $a_2,\ldots,a_m\in\R$.
+
+La proposition suivante montre que l'image de toute application linéaire est un sous-espace vectoriel de l'ensemble d'arrivée.
+
+\begin{prop}
+Si $T \in \mathcal{L}(E,F)$, alors $\textrm{\textit{Im}}(T)$ est un sous-espace vectoriel de $F$
+\begin{proof}
+Supposons $T \in \mathcal{L}(E,F)$. Alors $T(0)=0$ (par 3.1), ce qui implique que $0\in\textrm{\textit{Im}}(T)$ .
+Si $w_1,w_2\in\textrm{\textit{Im}}(T)$, alors il existe $v_1,v_2\in E$ tel que $Tv_1=w_1$ et $Tv_2=w_2$. Alors 
+
+\begin{equation*}
+    T(v_1 + v_2) = Tv_1 + Tv_2 = w_1 + w_2
+\end{equation*}
+et donc $w_1 + w_2\in \textrm{\textit{Im}}(T)$. Alors $\textrm{\textit{Im}}(T)$ est stable pour l'addition.
+Si $w\in\textrm{\textit{Im}}(T)$ et $a\in\K$, il existe alors $v\in V$ tel que $Tv=w$.
+Ainsi
+\begin{equation*}
+    T(av)=aTv=aw,
+\end{equation*}
+et donc $aw\in\textrm{\textit{Im}}(T)$. alors $\textrm{\textit{Im}}(T)$ est muni de la loi de composition externe.
+On a montré que $\textrm{\textit{Im}}(T)$ contient 0, est stable pour l'addition et multiplication. Alors $\textrm{\textit{Im}}(T)$ est un sous-espace vectoriel de F. 
+\end{proof}
+\end{prop}
+
+\marginpar{Une surjection est une application surjective}
+Une application linéaire $T\colon E\rightarrow F$ est dite \textbf{surjective} si son image est égale à l'espace vectoriel F. Par exemple, l'application de dérivation $T\in \mathcal{L}(\mathcal{P}(\R),\mathcal{P}(\R))$ définie par $Tp=p'$ est surjective car l'image est égale à $\mathcal{P}(\R)$. Un autre exemple, l'application linéaire  $T\in \mathcal{L}(\mathcal{P}(\R),\mathcal{P}(\R))$ définie par $(Tp)(x)=x^2p(x)$ n'est pas surjective car son image n'est pas égale à $\mathcal{P}(\R)$. Dernier exemple, vérifiez que l'application de décalage arrière $T\in \mathcal{L}(\F^\infty, \F^\infty)$ définie par 
+\begin{equation*}
+     T(x_1, x_2, x_3, \ldots) = (x_2, x_3, \ldots)
+\end{equation*}
+est surjective.\\
+La surjectivité d'une application linéaire peut dépendre de ce que l'on se représente de l'espace vectoriel d'arrivée. Par exemple fixons un entier positif $m$. L'application linéaire de dérivation $T\in \mathcal{L}(\mathcal{P}_m(\R),\mathcal{P}_m(\R))$ définie par $Tp=p'$ n'est pas surjective car le polynôme $x^m$ n'est pas dans l'image de $T$. Cependant,  L'application linéaire de dérivation $T\in \mathcal{L}(\mathcal{P}_m(\R),\mathcal{P}_m-1(\R))$ définie par $Tp=p'$ est surjective car son image est égal à $\mathcal{P}_m-1(\R)$, qui est dans ce cas l'ensemble d'arrivée. 
+
+Le prochain théorème, qui est un résultat clé de ce chapitre, indique que la somme de dimension du noyau et de la dimension de l'image d'une application linéaire sur un espace vectoriel de dimension finie est égal à la dimension de l'ensemble d'arrivée.
+
+\begin{thm}[Théorème du noyau]
+Si $E$ est de dimension finie et $T\in \mathcal{L}(E,F)$ alors $\textrm{\textit{Im}}(T)$ est un sous-espace vectoriel de dimension finie de $F$ et 
+\begin{equation*}
+    \textrm{dim }E = \textrm{dim \textit{Im} }T + \textrm{dim \textit{Ker} }T
+\end{equation*}
+\begin{proof}
+Supposons $E$ un espace vectoriel de dimension finie et $T \in \mathcal{L}(E,F)$. Soit $(u_1,\ldots,u_m)$ une base de $\textrm{\textit{Ker}}(T)$; alors dim $\textrm{\textit{Ker}}(T)$ = m. La famille libre $(u_1,\ldots,u_m)$ peut être complétée en une base $(u_1,\ldots,u_m,w_1,\ldots,w_n)$ de $E$ (par 2.12). Alors dim $V=m+n$, et pour finir la preuve, nous avons seulement besoin de montrer que $\textrm{\textit{Im}}(T)$ est de dimension finie et que dim $\textrm{\textit{Im}}(T) = n$. Pour cela, nous prouvons que $(Tw_1,\ldots,Tw_n)$ est une base de $\textrm{\textit{Im}}(T)$.
+Soit $v\in E$, Comme $(u_1,\ldots,u_m,w_1,\ldots,w_n)$ est une famille génératrice de $E$, on peut écrire 
+\begin{equation*}
+    v = a_1u_1 + \ldots + a_mu_m + b_1w_1 + \ldots + b_nw_n,
+\end{equation*}
+avec les coefficients $a_j$ et $b_i$ dans $\K$. En appliquant $T$ aux deux membres de l'équation, on obtient 
+\begin{equation*}
+     Tv = b_1Tw_1 + \ldots + b_nTw_n,
+\end{equation*}
+les termes de la forme $Tu_j$ on disparus car chaque $u_j\in \textrm{\textit{Ker}}(T)$. La dernière équation implique que $(Tw_1,\ldots,Tw_n)$ engendre $\textrm{\textit{Im}}(T)$. Finalement, on a montré que $\textrm{\textit{Im}}(T)$ est de dimension finie. 
+Pour montrer que $(Tw_1,\ldots,Tw_n)$ est une famille libre, supposons $c_1,\ldots,c_n\in\K$ et 
+\begin{equation*}
+    c_1Tw_1 + \ldots + c_nTw_n = 0.
+\end{equation*}
+Ensuite
+\begin{equation*}
+    T(c_1w_1 + \ldots + c_nw_n)= 0.
+\end{equation*}
+et donc 
+\begin{equation*}
+    (c_1w_1 + \ldots + c_nw_n)\in\textrm{\textit{Ker}}(T)
+\end{equation*}
+Comme $(u_1,\ldots,u_m)$ engendre $\textrm{\textit{Ker}}(T)$ alors on peut écrire 
+\begin{equation*}
+    c_1w_1 + \ldots + c_nw_n = d_1u_1 + \ldots + d_mu_m,
+\end{equation*}
+avec les coefficients $d_j$ dans $\K$. Cette équation implique que tout les $c_i$ (et les $d_j$) sont nuls (car $(u_1,\ldots,u_m,w_1,\ldots,w_n)$ est libre). Ainsi $(Tw_1,\ldots,Tw_n)$ est libre, donc c'est une base de  $\textrm{\textit{Im}}(T)$, comme voulu.
+\end{proof}
+\end{thm}
+
+Désormais, nous pouvons montrer qu'aucune application linéaire d'un espace vectoriel de dimension finie vers un plus "petit" espace vectoriel ne peut être injective, où "plus petit" relève de la dimension.
+
+\begin{coro}
+Si $E$ et $F$ sont deux espaces vectoriels de dimension finie tel que dim $E >$ dim $F$, alors il n'y a pas d'application linéaire de $E$ dans $F$ injective.
+\begin{proof}
+Supposons $E$ et $F$ deux espaces de dimension finie tel que dim $E >$ dim $F$. Soit $T\in \mathcal{L}(E,F)$. Alors 
+\begin{equation*}
+\begin{split}
+\textrm{dim \textit{Ker}}(T) & =\textrm{dim} E-\textrm{dim \textit{Im}}(T) \\
+& \geq \textrm{dim} E - \textrm{dim} F\\
+& > 0
+\end{split}﻿
+\end{equation*}
+l'équation de dessus provient du théorème du noyau (3.4). Nous venons de montrer que dim \textit{Ker}$(T) > 0$ . Cela signifie que \textit{Ker}$(T)$ doit contenir d'autres vecteurs que 0. Alors $T$ n'est pas injective (par 3.2).
+\end{proof}
+\end{coro}
+
+Le prochain corollaire, qui est en quelque sorte réciproque au précédent corollaire, montre qu'aucune application linéaire d'un espace vectoriel de dimension finie vers un espace vectoriel plus "grand" ne peut être surjectif, où "plus grand" relève de la dimension.
+
+\begin{coro}
+Si $E$ et $F$ sont deux espaces vectoriels de dimension finie tels que dim $E <$ dim $F$, alors aucune application linéaire de $E$ dans $F$ n'est surjective.
+\begin{proof}
+Supposons $E$ et $F$ deux espaces vectoriels de dimension finie tels que dim $E <$ dim $F$. Soit $T\in \mathcal{L}(E,F)$. Alors
+\begin{equation*}
+    \begin{split}
+        \textrm{dim \textit{Im}}(T) & = \textrm{dim} E - \textrm{dim \textit{Ker}}(T) \\
+        & \leq \textrm{dim } E \\
+        & < \textrm{dim } W
+    \end{split}
+\end{equation*}
+l'équation de dessus provient du théorème du noyau (3.4). Nous venons de démontrer que dim \textit{Im}$(T) < \textrm{dim } W$. Cela signifie que \textit{Im}$(T)$ ne peut pas être égal à $F$. Alors $T$ n'est pas surjective.
+\end{proof}
+\end{coro}
+
+Les deux derniers corollaires ont d'importantes conséquences dans la théorie des équations linéaires. En effet, on observe cela en fixant les entiers positifs $m$ et $n$, et en définissant $a_{j,k}\in\K$ avec $j=1,\ldots,m$ et $k=1,\ldots,n$. On définit $T\colon \K^n\rightarrow \K^m$ par 
+
+\begin{equation*}
+    T(x_1,\ldots,x_n)=(\sum_{k=1}^na_{1,k}x_k=0 ,\ldots,\sum_{k=1}^na_{m,k}x_k).
+\end{equation*}
+
+Considérons maintenant l'équation $Tx=0$ (où $x\in\K^n$ et le 0 est l'élément neutre de l'addition dans $\K^m$, à savoir la liste de taille $m$ de 0). Soit $x = (x_1,\ldots,x_n)$, on peut réécrire l'équation $Tx=0$ sous forme d'un système d'équations homogènes : \marginpar{\flushleft{\textbf{Homogène}, dans ce contexte, signifie que le terme constant à droite de chaque équation est égal à 0.}}  
+\begin{equation*}
+    \begin{split}
+    \sum_{k=1}^na_{1,k}x_k& =0\\
+    \vdots&\\
+    \sum_{k=1}^na_{m,k}x_k& =0\\
+    \end{split}
+\end{equation*}
+
+\noindent
+Avec les $a_{j,k}$ dans $\K$; nous cherchons à connaître les solutions pour les variables $x_1,\ldots,x_n$. Alors on a $m$ équations et $n$ inconnues. Évidemment, $x_1=\ldots=x_n=0$ est une solution; la question clé ici est de se demander si d'autres solutions existent. En d'autres termes, on veut savoir si $\textrm{\textit{Ker}}(T)$ est strictement plus grand que ${0}$. c'est le cas lorsque $T$ n'est pas injective (par 3.2). Avec 3.5, nous avons vu que $T$ n'est pas injective si $n>m$. Conclusion : un système homogène d'équations linéaires qui a plus d'inconnues que d'équations possède d'autres solutions que zéro.
+
+Avec l'application $T$ du paragraphe précédent, on considère maintenant l'équation $Tx=c$, avec $c=(c_1,\ldots,c_m)\in\K^m$. On peut réécrire l'équation $Tx=c$ sous forme d'un système d'équations non-homogènes :
+\marginpar{\flushleft{Ces résultats sur les systèmes homogènes avec plus d'inconnues que d'équations et les systèmes non-homogène avec plus d'équations que d'inconnues sont souvent prouvés avec l'élimination de Gauss. Ici, l'approche abstraite permet d'avoir des preuves plus claires.}}
+
+\begin{equation*}
+    \begin{split}
+    \sum_{k=1}^na_{1,k}x_k& = c_1\\
+    \vdots&\\
+    \sum_{k=1}^na_{m,k}x_k& = c_m\\
+    \end{split}
+\end{equation*}
+
+\noindent
+Comme précédemment, les $a_{j,k}$ sont dans $\K$. La question clé ici est de déterminer si pour tous les choix des termes constants $c_1,\ldots,c_m\in\K$, il existe au moins une solution pour les inconnues $x_1,\ldots,x_n$. En d'autres termes, on veut savoir si $\textrm{\textit{Im}}(T)$ est égal à $\K^m$. Avec le corollaire 3.6, on voit que $T$ n'est pas surjective si $n<m$. Conclusion : un système non-homogène d'équations linéaires dans lequel on a plus d'équations que d'inconnues n'a pas de solutions pour certains choix de constantes. 
+
+\newpage
+\section*{Matrice d'une application linéaire}
+
+Nous avons vu que si $(v_1,\ldots,v_n)$ est une base de $V$ et $T\colon E\rightarrow F$ est linéaire, alors les valeurs $Tv_1,\ldots,Tv_n$ déterminent des valeurs de $T$ appliquée à des vecteurs arbitraires dans E. Dans cette partie, nous verrons comment les matrices sont utilisées comme méthode efficace pour représenter les valeurs des $Tv_j$ dans la base $F$.
+
+Soit $m$ et $n$ des entiers positifs. Une \textbf{\textit{matrice}} $m$-$n$ est un tableau rectangulaire avec $m$ lignes et $n$ peut être représentée comme cela :
+
+\begin{center}
+\textbf{3.7}
+\begin{equation*}
+\begin{bmatrix}
+    a_{1,1} & \ldots & a_{1,n}\\
+    \vdots & & \vdots\\
+    a_{m,1} & \ldots & a_{m,n}
+\end{bmatrix}
+\end{equation*}
+\end{center}
+
+Notez que le premier indice fait référence au numéro de ligne et le deuxième indice au numéro de la colonne. Par conséquent $a_{3,2}$ correspond à l'élément à la 3ème ligne et à la 2ème colonne de la matrice ci-dessus. Généralement, on considère que les éléments de la matrice sont dans $\K$. 
+
+Soit $T\in\mathcal{L}(E,F)$. Supposons $(v_1,\ldots,v_n)$ une base de $E$ et $(w_1,\ldots,w_n)$ une base de $F$. Pour tout $k=1,\ldots,n$, on peut écrire $Tv_k$ de manière unique sous forme de combinaisons linéaire des vecteurs $w_j$ :
+
+
+
+\textbf{3.8}
+\begin{equation*}
+    Tv_k=a_{1,k}w_1+\ldots+a_{m,k}w_m,
+\end{equation*}
+
+Avec $a_{j,k}\in\K$ pour $j=1,\ldots,m$. Les scalaires $a_{j,k}$ définissent complètement l'application linéaire $T$ car une application linéaire est définie par ses valeurs dans une base. La matrice $m$-$n$ 3.7 formée par les $a_{i,j}$ est appelée la \textbf{\textit{matrice}} associée à $T$ dans les bases $(v_1,\ldots,v_n)$ et $(w_1,\ldots,w_n)$, on l'écrit :
+\begin{equation*}
+    \mathcal{M}(T,(v_1,\ldots,v_n),(w_1,\ldots,w_n)).
+\end{equation*}
+
+Si les bases $(v_1,\ldots,v_n)$ et $(w_1,\ldots,w_n)$ sont claires dans le contexte (par exemple nous n'avons qu'un unique ensemble de bases dans le contexte) on peut juste noter $\mathcal{M}(T)$ au lieu de $\mathcal{M}(T,(v_1,\ldots,v_n),(w_1,\ldots,w_n))$.
+
+Pour vous souvenir de la manière dont est construite $\mathcal{M}(T)$, vous pouvez écrire les vecteurs $v_1,\ldots,v_n$ de la base de l'ensemble de départ au dessus de la matrice et les vecteurs $w_1,\ldots,w_n$ de la base de l'ensemble d'arrivée sur le coté gauche de la matrice comme suit :
+
+\begin{center}
+\begin{equation*}\begin{bmatrix}
+    \quad &\quad &a_{1,k} & \quad & \quad \\
+    & &\vdots & &\\
+    & & a_{1,m} & &\\
+\end{bmatrix}\end{equation*}
+\end{center}
+
+Notez que dans la matrice du dessus, seule la $k$-ième colonne est représentée (donc le deuxième indice de tous les $a_{j,k}$ est $k$). La $k$-ième colonne de $\mathcal{M}(T)$ contient les scalaires qui permettent d'écrire $Tv_k$ sous forme d'une combinaison linéaire de vecteurs $w_j$. Alors l'image ci-dessus devrait vous rappeler que l'on retrouve $Tv_k$ à partir de $\mathcal{M}(T)$ en multipliant chaque élément de la colonne par le vecteur $w_j$ à gauche correspondant puis en faisant la somme des vecteurs résultants.
+
+Si $T$ est une application linéaire de $\K^n$ dans $\K^m$, alors à moins qu'il est affirmé autrement, vous devez faire l'hypothèse que les bases dans la question sont les bases standard, c'est-à-dire les bases canoniques (où le $k$-ième vecteur est celui qui a un 1 à la $k$-ième coordonnées et 0 pour le reste). Si vous vous représentez les vecteurs de $\K^n$ en colonne de $m$ nombres, alors vous pouvez penser que la $k$-ième colonne de $\mathcal{M}(T)$ correspond à l'application de $T$ sur le $k$-ième vecteur de la base de $E$.
+
+\noindent
+Par exemple, si $T\in\mathcal{L}(\K^2,\K^3)$ est défini par 
+
+\begin{equation*}
+    T(x,y)=(x+3y,2x+5y,7x+9y)
+\end{equation*}
+
+\noindent
+alors $T(1,0)=(1,2,7)$ et $T(0,1)=(3,5,9)$.=, donc la matrice associée à $T$ (par rapport aux bases canoniques) est la matrice $3$-$2$
+\begin{center}
+    \begin{equation*}\begin{bmatrix}
+        1 & 3 \\
+        2 & 5 \\
+        7 & 9 \\
+    \end{bmatrix}\end{equation*}.
+\end{center}
+
+Supposons que nous ayons les bases $(v_1,\ldots,v_n)$ de $E$ et $(w_1,\ldots,w_m)$ de $F$. Alors pour chaque application linéaire de $E$ dans $F$, on peut parler de sa matrice associée (par rapport à ces bases bien sûr). Est-ce que la matrice de la somme de deux applications linéaire est égale à la matrice somme des deux matrices associées ?
+
+Maintenant, la question n'a pas de sens, même si nous avons défini la somme de deux applications linéaires, nous n'avons pas défini la somme de deux matrices. Heureusement, la définition évidente de la somme de deux matrice possède les propriétés attendues. Plus précisément, on définit la somme de deux matrics de même taille par la somme des éléments de positions correspondantes :
+
+\begin{equation*}\begin{bmatrix}
+    a_{1,1} & \ldots & a_{1,n} \\
+    \vdots & & \vdots\\
+    a_{m,1} & \ldots & a_{m,n} \\
+\end{bmatrix}\end{equation*}
++ 
+\begin{equation*}\begin{bmatrix}
+    b_{1,1} & \ldots & b_{1,n} \\
+    \vdots & & \vdots\\
+    b_{m,1} & \ldots & b_{m,n} \\
+\end{bmatrix}\end{equation*}
++
+\begin{equation*}\begin{bmatrix}
+    a_{1,1} + b_{1,1} & \ldots & a_{1,n} + b_{1,n} \\
+    \vdots & & \vdots\\
+    a_{m,1} + b_{m,1} & \ldots & a_{m,n} + b_{m,n} \\
+\end{bmatrix}\end{equation*}
+
+Vérifiez qu'avec la définition de la somme de matrices,
+\textbf{3.9}
+\begin{equation*}
+\mathcal{M}(T+S) = \mathcal{M}(T) + \mathcal{M}(S) 
+\end{equation*}
+avec $T,S\in\mathcal{L}(E,F)$.
+
+En supposant toujours que nous avons des bases en tête, est-ce que la matrice d'un scalaire multiplié par une application est égale scalaire multiplié par la matrice ? Encore une fois cette question n'a pas de sens car nous n'avons pas défini la multiplication scalaire sur les matrices. Heureusement, la définition évidente a les propriétés attendues. Plus précisément, nous définissons le produit d'un scalaire et d'une matrice par la multiplication de chaque élément de la matrice par le scalaire:
+
+$c$
+\begin{equation*}\begin{bmatrix}
+    a_{1,1} & \ldots & a_{1,n} \\
+    \vdots & & \vdots\\
+    a_{m,1} & \ldots & a_{m,n} \\
+\end{bmatrix}\end{equation*}
+$=$
+\begin{equation*}\begin{bmatrix}
+    ca_{1,1} & \ldots & ca_{1,n} \\
+    \vdots & & \vdots\\
+    ca_{m,1} & \ldots & ca_{m,n} \\
+\end{bmatrix}\end{equation*}
+
+Vérifiez qu'avec cette définition de la multiplication scalaire sur les matrices,
+
+\textbf{3.10}
+\begin{equation*}
+    \qquad \mathcal{M}(cT)=c\mathcal{M}(T)
+\end{equation*}
+avec $c\in\K$ et $T\in\mathcal{L}(E,F)$.
+
+Comme l'addition et la multiplication ont maintenant été définis pour les matrices, vous ne serez pas surpris de voir un espace vectoriel apparaître. Nous avons seulement besoin d'un peu de notation pour que ce nouvel espace vectoriel ait un nom. L'ensemble de toutes les matrices $m$-$n$ d'éléments dans $\K$ est noté $Mat(m,n,\K)$ ou $\mathcal{M}_{m,n}(\K)$. Vérifiez qu'avec l'addition et la multiplication scalaire définie ci-dessus, $Mat(m,n,\K)$ est un espace vectoriel. Notez que l'élément neutre de l'addition dans $Mat(m,n,\K)$ est la matrice $m$-$n$ dont tous les éléments sont égaux à 0.
+\linebreak
+
+Supposons que $(v_1,\ldots,v_n)$ est une base de $E$ et $(w_1,\ldots,w_n)$ est une base de $F$. Supposons aussi que l'on a un autre espace vectoriel $U$ et que $(u_1,\ldots,u_n)$ est une base de $U$. Considérons les applications linéaires $S\colon U\rightarrow E$ et $T\colon E\rightarrow F$. La composition $TS$ est une application linéaire de $U$ dans $F$. Comment $\mathcal{M}(TS)$ peut elle être déterminée à partir de $\mathcal{T}$ et $\mathcal{S}$ ? La solution la plus agréable à cette question serait d'avoir la jolie relation suivante :
+
+\textbf{3.11}
+\begin{equation*}
+    \qquad \mathcal{M}(TS)=\mathcal{M}(T)\mathcal{M}(S).
+\end{equation*}
+
+Jusqu'ici, cependant, le membre de droite de cette équation n'a pas de sens car nous n'avons pas encore défini le produit de deux matrices. Nous allons choisir une définition de la multiplication matricielle qui forcerait l'équation du dessus de tenir la route. Voyons comment faire ça.
+
+Soit 
+$\mathcal{M}(T)=$
+\begin{equation*}\begin{bmatrix}
+    a_{1,1} & \ldots & a_{1,n} \\
+    \vdots & & \vdots\\
+    a_{m,1} & \ldots & a_{m,n} \\
+\end{bmatrix}\end{equation*}
+et
+$\mathcal{M}(S)=$
+
+\begin{equation*}\begin{bmatrix}
+    b_{1,1} & \ldots & b_{1,p} \\
+    \vdots & & \vdots\\
+    b_{n,1} & \ldots & b_{n,p} \\
+\end{bmatrix}\end{equation*}
+
+pour $k\in\{1,\ldots,p\}$, on a 
+
+\begin{equation*}
+    \begin{split}
+        TSu_k &=T(\sum_{r=1}^nb_{r,k}v_r)\\
+        & = \sum_{r=1}^nb_{r,k}Tv_r\\
+        & = \sum_{r=1}^nb_{r,k}\sum_{j=1}^ma_{j,r}w_j\\
+        & = \sum_{j=1}^m(\sum_{r=1}^na_{j,r}b_{r,k})w_j.\\
+    \end{split}
+\end{equation*}
+
+Alors $\mathcal{M}(TS)$ est la matrice $m$-$p$ dont les éléments de chaque ligne $j$, colonne $k$ sont égaux à $\sum_{r=1}^na_{j,r}b_{r,k}$.
+
+Maintenant, la définition du produit matriciel est suffisamment claire pour que l'équation 3.11 tienne la route. À savoir, si $A$ est une matrice $m$-$n$ avec les éléments $a_{j,k}$ et B est une matrice $n$-$p$ avec les éléments $b_{j,k}$, alors $AB$ est définie par la matrice $m$-$p$ dont les éléments de la ligne $j$ et de la colonne $k$, sont égaux à
+\begin{equation*}
+   \sum_{r=1}^na_{j,r}b_{r,k}.
+\end{equation*}
+
+En d'autres termes, l'élément de la ligne $j$, colonne $k$ de $AB$ est calculé en prenant la ligne $j$ de $A$ et la colonne $k$ de $B$, en multipliant ensemble les éléments correspondants, puis en faisant la somme. Notez que l'on défini le produit de deux matrice seulement lorsque le nombres de colonnes de la première matrice est égal au nombre de lignes de la deuxième matrice. \\
+
+Voici un exemple de multiplication matricielle, ici nous multiplions ensemble une matrice 3-2 par une matrice 2-4, on obtient alors une matrice 3-4.
+\marginpar{\flushright{Vous pouvez trouver un exemple qui montre que la multiplication matricielle n'est pas commutative. C'est-à-dire, $AB$ n'est généralement pas égal à $BA$, même quand les deux produits sont définis.}}
+
+\begin{equation*}
+    \begin{bmatrix}
+    1 & 2 \\
+    3 & 4 \\
+    5 & 6 \\
+    \end{bmatrix}
+    \begin{bmatrix}
+    6 & 5 & 4 & 3 \\
+    2 & 1 & 0 & -1\\
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    10 & 7  & 4  & 1 \\
+    26 & 19 & 12 & 5 \\
+    42 & 31 & 20 & 9 \\
+    \end{bmatrix}
+\end{equation*}
+
+Supposons $(v_1,\ldots,v_n)$ une base de $V$. Si $v\in E$, alors il existe une unique combinaison de scalaires $b_1,\ldots,b_n$ tel que
+
+\begin{equation*}
+    \textrm{\textbf{3.12}} \qquad v=b_1v_1 + \ldots + b_nv_n.
+\end{equation*}
+
+La \textbf{matrice} de $v$, notée $\mathcal{M}(v)$ est la matrice $n$ par $1$ définie par \begin{equation*}
+    \textrm{\textbf{3.13}} \qquad
+    \mathcal{M}(v)
+    = 
+    \begin{bmatrix}
+    b_1 \\
+    \vdots \\ 
+    b_n \\
+    \end{bmatrix}
+\end{equation*}
+
+Généralement, la base est évidente dans le contexte, mais lorsque la base à besoins d'être indiquée explicitement utiliser la notation $\mathcal{M}(v, (v_1,\ldots,v_n))$ au lieu de $\mathcal{M}(v)$
+
+Par exemple, la matrice d'un vecteur $x\in\K^n$ dans les bases canoniques est obtenue en écrivant les coordonnées de $x$ dans une matrice $n$-$1$. En d'autres termes, si $x=(x_1,\ldots,x_n)\in\K^n$, alors 
+\begin{equation*}
+    \mathcal{M}(x)
+    = 
+    \begin{bmatrix}
+    x_1 \\
+    \vdots \\ 
+    x_n \\
+    \end{bmatrix}
+\end{equation*}
+
+La proposition suivante montre comment les notions de matrice d'une application linéaire, matrice d'un vecteur et multiplication matricielle sont reliées ensemble. Dans cette proposition, 
+$\mathcal{M}(Tv)$ est la matrice du vecteur $Tv$ dans la base $(v_1,\ldots,v_n)$, où $\mathcal{M}(T)$ est la matrice de l'application linéaire $T$ avec les bases $(v_1,\ldots,v_n)$ et $(w_1,\ldots,w_m)$.
+
+\begin{prop}
+Supposons $T\in\mathcal{L}(E,F)$ et $(v_1,\ldots,v_n)$ une base de $E$ et $(w_1,\ldots,w_m)$ est base de $F$. Alors
+
+\begin{equation*}
+    \mathcal{M}(Tv)=\mathcal{M}(T)\mathcal{M}(v)
+\end{equation*}
+pour tout $v\in E$.
+
+\begin{proof}
+Soit 
+\begin{equation*}
+    \textrm{\textbf{3.15}} \qquad
+    \mathcal{M}(T) 
+    =
+    \begin{bmatrix}
+        a_{1,1} & \ldots & a_{1,n} \\
+        \vdots & & \vdots\\
+        a_{m,1} & \ldots & a_{m,n} \\
+\end{bmatrix}
+\end{equation*}
+
+Cela signifie, rappelons-le, que 
+\begin{equation*}
+    \textrm{\textbf{3.16}} \qquad
+    Tv_k
+    =
+    \sum_{j=1}^ma_{j,k}w_j
+\end{equation*}
+pour chaque $k$. Soit $v$ un vecteur quelconque dans $E$, que l'on peut écrire sous la  forme 3.12. Alors $\mathcal{M}(v)$ est donné par 3.13. Maintenant 
+
+\begin{equation*}
+    \begin{split}
+        Tv &= b_1Tv_1 + \ldots + b_nTv_n \\
+        & = b_1\sum_{j=1}^ma_{j,1}w_j + \ldots + b_n\sum_{j=1}^ma_{j,n}w_j \\
+        & = \sum_{j=1}^m(a_{j,1}b_1+\ldots+a_{j,n}b_n)w_j
+    \end{split}
+\end{equation*}
+la première équation provient de 3.12 et la deuxième de 3.16. La dernière équation montre que $\mathcal{M}(Tv)$, la matrice $m$-$1$ du vecteur $Tv$ dans la base $(w_1,\ldots,w_n)$, est donné par l'équation 
+\begin{equation*}
+    \mathcal{M}(Tv)=
+    \begin{bmatrix}
+        a_{1,1}b_1 + \ldots + a_{1,n}b_n \\
+        \vdots \\
+        a_{m,1}b_1 + \ldots + a_{m,n}b_n \\
+    \end{bmatrix}
+\end{equation*}
+
+Cette formule, avec les formules 3.15 et 3.13 et la définition de la multiplication de matrices montre que $\mathcal{M}(Tv)=\mathcal{M}(T)\mathcal{M}(v)$.
+\end{proof}
+\end{prop}
+
+\section*{Inversibilité}
+Une application linéaire $T\in\mathcal{L}(E,F)$ est dite \textit{\textbf{inversible}} s'il existe une application linéaire  $S\in\mathcal{L}(F,E)$ telle que $ST$ est égal à l'application d'identité sur $E$ et $TS$ est égal à l'application d'identité sur $F$. Une application linéaire $S\in\mathcal{L}(F,E)$ satisfaisant $ST=I_E$ et $TS=I_F$ est appelée l'application \textbf{\textit{réciproque}} de $T$ (notez que $I_E$ est l'application identité sur $E$ et $I_F$ l'application identité sur $F$).
+
+Si $S$ et $S'$ sont deux applications réciproque de $T$, alors
+\begin{equation*}
+    S=SI=S(TS')=(ST)S'=IS'=S',
+\end{equation*}
+donc $S=S'$ en d'autres termes, si $T$ est inversible, alors elle n'a qu'une unique application réciproque que l'on note $T^{-1}$. Pour résumer, si $T\in\mathcal{L}(E,F)$ est inversible, alors $T^{-1}$ est l'unique élément de $\mathcal{L}(F,E$ tel que $T^{-1}T=TT^{-1}=I$. La proposition suivante caractérise les applications linéaires inversibles.
+
+\begin{prop}
+Une application linéaire est inversible si et seulement si elle est injective et surjective.
+
+\begin{proof}
+Supposons $T\in\mathcal{L}(E,F)$. Nous avons besoin de montrer que $T$ est inversible si et seulement si elle est injective et surjective.
+Tout d'abord, supposons que $T$ est inversible. Pour montrer que $T$ est injective, supposons que $u,v\in E$ et $Tu=Tv$. Alors 
+
+\begin{equation*}
+    u=T^{-1}(Tu)=T^{-1}(Tv)=v
+\end{equation*}
+donc $u=v$. Donc $T$ est injective.
+
+On suppose toujours que $T$ est inversible. Désormais, nous voulons prouver que $T$ est surjective. Pour cela, soit $w\in F$. Alors $w=T(T^{-1}w)$, ce qui montre que $w$ est dans l'image de $T$. Alors \textit{Im}$(T)=F$, et donc $T$ est surjective, ce qui complète notre preuve.
+
+Supposons maintenant que $T$ est injective et surjective. Nous voulons prouver que $T$ est inversible. Pour tout $w\in F$, définissons $Sw$ comme le seil élément de $E$ tel que $T(Sw)=w$ (l'existence et l'unicité d'un tel élément suit la propriété de surjectivité et injectivité de $T$). Alors il est clair que $TS$ est égal à l'application identité sur $F$. Pour prouver que $ST$ est égal à l'application identité sur $E$, on chosit $v\in E$. Alors
+
+\begin{equation*}
+    T(STv)=(TS)(Tv)=I(Tv)=Tv
+\end{equation*}
+Cette équation implique que $STv=v$ (car $T$ est injective), et donc $ST$ est égal à l'application identité sur $E$. Pour compléter cette preuve, nous devons prouver que S est linéaire. Pour faire cela, on a $w_1, w_2\in F$. Alors 
+
+\begin{equation*}
+    T(Sw_1 + Sw_2) = TSw_1 + TSw_2 = w_1 + w_2
+\end{equation*}
+
+Alors $Sw_1+Sw_2$ est le seul élément de $E$ qui a pour image $w_1+w_2$ par $T$. Par la définition de $S$, cela implique que $S(w_1+w_2)=Sw_1+Sw_2$. Donc $S$ satisfait la propriété additive requise pour la linéarité. La preuve de l'homogénéité est similaire. Plus précisément, si $w\in F$ et $a\in \K$ alors
+
+\begin{equation*}
+    T(aSw)=aT(Sw)=aw.
+\end{equation*}
+$aSw$ est donc l'unique élément de $E$ qui a pour image $aw$. Par définition de $S$, cela implique que $S(aw)=aSw$. Alors $S$ est linéaire comme voulue. 
+
+\medskip
+
+Deux espaces vectoriels sont dits \textbf{\textit{isomorphiques}}\marginpar{\flushleft{\textit{Le mot grec \textbf{isos} signifie égal; le mot grec \textbf{morph} signifie forme. Alors isomorphisme signifie littéralement forme égale}}} s'il y a une application linéaire inversible d'un espace vectoriel vers l'autre. 
+
+\end{proof}
+\end{prop}
+
+\end{document}

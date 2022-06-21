@@ -1,0 +1,15 @@
+\documentclass[12pt]{book}
+\usepackage{stylepackage}
+\title{Glossaire Anglais-Français des termes mathématiques}
+
+\begin{document}
+%\maketitle
+\chapter*{Glossaire Anglais-Français}
+\begin{tabular}{l l}%
+    \bfseries Anglais & \bfseries Français\\
+    \hline
+    \csvreader[head to column names]{definitions.csv}{}
+    {\\\textbf{\anglais}\ & \francais\hfill}
+\end{tabular}
+
+\end{document}

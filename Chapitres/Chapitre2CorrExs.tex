@@ -1,0 +1,100 @@
+\documentclass[12pt]{book}
+\usepackage{stylepackage}
+
+\begin{document}
+\section*{Correction du chapitre 2}
+
+\subsection*{Exercice 1}
+Prouvons que si $(v_1,\ldots,v_n)$ engendre $V$, alors il va de m\^eme pour la famille $(v_1-v_2,v_2-v_3,\ldots,v_n{_-}_1-v_n,v_n)$\\
+
+\noindent
+vect$(v_1,\ldots,v_n) = V$\\
+vect$(v_1,\ldots,v_n) = \{ \lambda_1v_1+ \lambda_2v_2 +\ldots+ \lambda_nv_n : \lambda_1, \lambda_2,\ldots, \lambda_n \in \K \}$\\
+$vect(v_1,\ldots,v_n) = vect(v_1-v_2,v_2,\ldots,v_n)$ ( conservation des vects)\\
+$vect(v_1-v_2,v_2,\ldots,v_n) = vect(v_1-v_2,v_2-v_3,v_3,\ldots,v_n)$\\
+\vdots\\
+\noindent
+$vect(v_1-v_2,\ldots,v_n{_-}_2-v_n{_-}_1,v_n{_-}_1,v_n) = vect(v_1-v_2,\ldots,v_n{_-}_1-v_n,v_n)$\\
+
+\subsection*{Exercice 2}
+Prouvons que si $(v_1,\ldots,v_n)$ libre alors $(v_1-v_2,v_2-v_3,\ldots,v_n{_-}_1-v_n,v_n)$ l'est aussi.\\
+
+$(v_1,\ldots,v_n)$ est libre $\Leftrightarrow$ $\forall$ $\lambda_1,\ldots,\lambda_n \in \K$, on a \\
+$\lambda_1v_1+ \lambda_2v_2 +\ldots+ \lambda_nv_n = 0_E$ avec $\lambda_1 =\ldots = \lambda_n = 0$\\
+On a $vect(v_1,\ldots,v_n) = vect(v_1-v_2,v_2-v_3,\ldots,v_n{_-}_1-v_n,v_n)$\\
+$0 = \lambda_1v_1+ \lambda_2v_2 +\ldots+ \lambda_nv_n = \al_1(v_1-v_2) + \al_2(v_2-v_3 +\dots+ \al_n{_-}_1(v_n{_-}_1-v_n) + \al_nv_n $\\
+$0 = \al_1v1 + (\al_2-\al_1)v_2 +\ldots+ (\al_n-\al_n{_-}_1)v_n$\\
+Comme $(v_1,\ldots,v_n)$ est libre alors: 
+\flushleft{
+$$
+    \left\{
+    \begin{array}{l}
+        \al_1=0 \\
+        \al_2-\al_1 = 0\\
+        \vdots\\
+        \al_n-\al_n{_-}_1=0\\
+    \end{array}
+    \right.
+$$}\\
+Donc on a $\al_1 = \al_2 = \ldots= \al_n = 0$;
+d'o\'u 
+$(v_1-v_2,v_2-v_3,\ldots,v_n{_-}_1-v_n,v_n)$ est libre
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

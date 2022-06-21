@@ -1,0 +1,70 @@
+\usepackage[french]{babel}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{eucal}
+
+\usepackage{graphicx,graphics}
+\graphicspath{ {images/} } % les images utilisées sont dans le dossier image
+
+\usepackage{epstopdf}
+\usepackage{amsthm}
+
+\usepackage{lipsum}
+\usepackage{bm}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[CE]{\leftmark}
+%\fancyhead[CO]{\rightmark}
+
+
+%\fancyhead[CE]{\textsc{\chaptername~\thechapter}.~\chaptermark}
+\fancyhead[CO]{ }
+
+\fancyhead[LE, RO]{\thepage}
+
+\renewcommand{\chaptername}{}
+\renewcommand{\thechapter}{}
+
+
+
+% Environnement pour indenter un bloc de texte
+\usepackage{changepage} 
+\newenvironment{indpar}{\begin{adjustwidth}{0.7cm}{}}{\end{adjustwidth}}
+
+%Lecture des fichiers csv
+\usepackage{csvsimple}
+% Remplacer les QED des preuves par des carrés noirs pleins
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\numberwithin{equation}{section}
+
+\newtheorem{thm}{Théorème}[chapter]
+\newtheorem{defn}{Définition}[chapter]
+\newtheorem{prop}{Proposition}[chapter]
+\newtheorem{propri}{Propriété}%[section]
+\newtheorem{rem}{Remarque}%[section]
+\newtheorem{coro}{Corollaire}%[section]
+\newtheorem{exemp}{Exemple}%[section]
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\F}{\mathbb{F}}
+
+\def \al {\alpha}
+\def \be {\beta}
+\def \ga {\gamma}
+\def \ep {\varepsilon}
+
+\endinput

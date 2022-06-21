@@ -1,0 +1,150 @@
+\documentclass[12pt]{book}
+\usepackage{stylepackage}
+
+\begin{document}
+\section*{Correction du chapitre 1}
+
+\subsection*{Exercice 1}
+
+
+\subsection*{Exercice 3}
+
+
+\subsection*{Exercice 4}
+
+
+\subsection*{Exercice 5}
+
+
+\subsection*{Exercice 6}
+
+
+\subsection*{Exercice 7}
+
+
+\subsection*{Exercice 8}
+
+
+\subsection*{Exercice 9}
+
+    
+\subsection*{Exercice 10}
+
+
+\subsection*{Exercice 11}
+
+
+\subsection*{Exercice 12}
+
+
+\subsection*{Exercice 13}
+
+
+\subsection*{Exercice 14}
+
+
+\subsection*{Exercice 15}
+
+
+\subsection*{Exercice 16}
+
+
+\subsection*{Exercice 17}
+\textit{Prouvons que la multiplication matricielle et l'addition matricielle sont reliées par la distributivité, autrement dit que $A(B+C)=AB+AC$.} 
+Pour que $A(B+C)$ fasse sens, il faut d'abord que $B+C$ soit correct, alors $B$ et $C$ doivent être de la même taille, ensuite le produit matriciel doit respecter la règle sur les tailles. Alors on peut définir $A\in\M_{m,n}$ et $B,C\in\M_{n,p}$.
+Ainsi 
+\begin{equation*}
+    A = 
+    \begin{bmatrix}
+    a_{1,1} & \ldots & a_{1,n} \\
+    \vdots & & \vdots \\
+    a_{m,1} & \ldots & a_{m,n}
+    \end{bmatrix}
+    B = 
+    \begin{bmatrix}
+    b_{1,1} & \ldots & b_{1,p} \\
+    \vdots & & \vdots \\
+    b_{n,1} & \ldots & b_{n,p}
+    \end{bmatrix}
+    C = 
+    \begin{bmatrix}
+    c_{1,1} & \ldots & c_{1,p} \\
+    \vdots & & \vdots \\
+    c_{n,1} & \ldots & c_{n,p}
+    \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    B+C = 
+    \begin{bmatrix}
+    b_{1,1} + c_{1,1} & \ldots & b_{1,p} + c_{1,p} \\
+    \vdots & & \vdots \\
+    b_{n,1} + c_{n,1} & \ldots & b_{n,p}+c_{n,p}
+    \end{bmatrix}
+\end{equation*}
+
+Alors 
+\begin{equation*}
+\begin{split}
+    A(B+C)& =
+    \begin{bmatrix}
+    a_{1,1} & \ldots & a_{1,n} \\
+    \vdots & & \vdots \\
+    a_{m,1} & \ldots & a_{m,n}
+    \end{bmatrix}
+    \begin{bmatrix}
+    b_{1,1} + c_{1,1} & \ldots & b_{1,p} + c_{1,p} \\
+    \vdots & & \vdots \\
+    b_{n,1} + c_{n,1} & \ldots & b_{n,p}+c_{n,p}
+    \end{bmatrix}\\
+    & = 
+    \begin{bmatrix}
+    \sum\limits\limits_{j=1}^na_{1,j}(b_{j,1} + c_{j,1}) & \ldots & \sum\limits_{j=1}^na_{1,j}(b_{j,p} + c_{j,p}) \\
+    \vdots & & \vdots \\
+    \sum\limits_{j=1}^na_{m,j}(b_{j,1} + c_{j,1}) & \ldots & \sum\limits_{j=1}^na_{m,j}(b_{j,p} + c_{j,p})
+    \end{bmatrix}\\
+    & =
+    \begin{bmatrix}
+    \sum\limits_{j=1}^na_{1,j}b_{j,1}+\sum\limits_{j=1}^na_{1,j}c_{j,1}& \ldots & \sum\limits_{j=1}^na_{1,j}b_{j,p}+\sum\limits_{j=1}^na_{1,j}c_{j,p}  \\
+    \vdots & & \vdots \\
+    \sum\limits_{j=1}^na_{m,j}b_{j,1} + \sum\limits_{j=1}^na_{m,j}c_{j,1} & \ldots & \sum\limits_{j=1}^na_{m,j}b_{j,p}+ \sum\limits_{j=1}^na_{m,j}c_{j,p}
+    \end{bmatrix}\\
+\end{split}
+\end{equation*}
+
+Or 
+\begin{equation*}
+\begin{split}
+ AB+AC& =
+    \begin{bmatrix}
+    \sum\limits_{j=1}^na_{1,j}b_{j,1} & \ldots & \sum\limits_{j=1}^na_{1,j}b_{j,p}  \\
+    \vdots & & \vdots \\
+    \sum\limits_{j=1}^na_{m,j}b_{j,1}  & \ldots & \sum\limits_{j=1}^na_{m,j}b_{j,p}
+    \end{bmatrix}+
+    \begin{bmatrix}
+    \sum\limits_{j=1}^na_{1,j}c_{j,1}& \ldots & \sum\limits_{j=1}^na_{1,j}c_{j,p}  \\
+    \vdots & & \vdots \\
+    \sum\limits_{j=1}^na_{m,j}c_{j,1} & \ldots & \sum\limits_{j=1}^na_{m,j}c_{j,p}
+    \end{bmatrix}\\
+    & =
+    \begin{bmatrix}
+    \sum\limits_{j=1}^na_{1,j}b_{j,1}+\sum\limits_{j=1}^na_{1,j}c_{j,1}& \ldots & \sum\limits_{j=1}^na_{1,j}b_{j,p}+\sum\limits_{j=1}^na_{1,j}c_{j,p}  \\
+    \vdots & & \vdots \\
+    \sum\limits_{j=1}^na_{m,j}b_{j,1} + \sum\limits_{j=1}^na_{m,j}c_{j,1} & \ldots & \sum\limits_{j=1}^na_{m,j}b_{j,p}+ \sum\limits_{j=1}^na_{m,j}c_{j,p}
+    \end{bmatrix}
+\end{split}
+\end{equation*}
+
+\textbf{Conclusion} 
+\begin{equation*}
+    A(B+C) = 
+    \begin{bmatrix}
+    \sum\limits_{j=1}^na_{1,j}b_{j,1}+\sum\limits_{j=1}^na_{1,j}c_{j,1}& \ldots & \sum\limits_{j=1}^na_{1,j}b_{j,p}+\sum\limits_{j=1}^na_{1,j}c_{j,p}  \\
+    \vdots & & \vdots \\
+    \sum\limits_{j=1}^na_{m,j}b_{j,1} + \sum\limits_{j=1}^na_{m,j}c_{j,1} & \ldots & \sum\limits_{j=1}^na_{m,j}b_{j,p}+ \sum\limits_{j=1}^na_{m,j}c_{j,p}
+    \end{bmatrix}
+    = AB + AC
+\end{equation*}
+Nous avons prouvé que la multiplication matricielle et l'addition matricielle sont reliées par la distributivité. \hfill $\blacksquare$
+
+\end{document}

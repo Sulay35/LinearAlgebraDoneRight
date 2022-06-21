@@ -1,0 +1,253 @@
+\documentclass[12pt]{book}
+\usepackage{stylepackage}
+
+\begin{document}
+%\thispagestyle{plain}%
+\chapter{\textmd{\textsc{\Large{Chapitre 2}}} \\ \textsl{Espaces Vectoriels de// Dimension Finie}}
+
+\vfill
+
+\indent{Dans le dernier chapitre, nous avons appris les espaces vectoriels. L'alg\`ebre linéaire ne se concentre pas sur des espaces vectoriels arbitraires, mais sur des espaces vectoriels de dimension finie, que nous introduisons dans ce chapitre. Nous traiterons les concepts cl\'es associés à ces espaces: vect, ind\'ependance lin\'eaire, base et dimension.}
+
+\indent{Passons en revue nos hypothèses de base :}
+\begin{center}
+\fbox{
+\begin{minipage}{0.7 \textwidth }
+\hspace{1 cm}Rappelons que $\K$ d\'esigne \bm{$R$} ou \bm{$C$}.\\
+Rappelons aussi que $V$ est un espace vectoriel sur $\K$.\\ 
+\end{minipage}
+}
+\end{center}
+\vfill
+\begin{center}
+\includegraphics[scale=0.10]{Asterisk.png}
+\hspace{1cm} 
+\includegraphics[scale=0.10]{Asterisk.png}
+\hfill 
+\end{center}
+
+\pagebreak
+\newpage
+%\begin{enumerate}%
+\section*{\textsl{Famille et Ind\'ependance lin\'eaire}}
+La combinaison lin\'eaire d'une famille $ (V_1,\ldots,V_m)$ de vecteur dans $V$ de la forme 
+
+
+\noindent
+\textbf{2.1}\hspace{3cm} $a_1V_1+\ldots+a_mV_m$ , 
+
+ 
+\marginpar{\flushright{\textit{Certains math\'ematiciens utilisent le terme de \textbf{g\'en\'eratrice}, ce qui signifie la m\^eme chose que le vect.}}}
+où $a_1,\ldots,a_m $ $\in \K$.L'ensemble de toutes les combinaisons lin\'eaires de $(V_1,\ldots,V_m)$ est appel\'e \textbf{vect} de $(V_1,\ldots,V_m)$. En d'autres termes,
+\begin{equation*}
+vect(V_1,\ldots,V_m)=\{a_1V_1+\ldots+a_mV_m : a_1,\ldots,a_m \in \K\}.
+\end{equation*}
+\hspace{0.5cm}\`A titre d’exemple de ces concepts, supposons que $V = \K^3$ .Le vecteur $(7,2,9)$ est une combinaison lin\'eaire de $((2,1,3),(1,0,1))$ parce que 
+\begin{equation*}
+(7,2,9)=2(2,1,3) + 3(1,0,1).
+\end{equation*}
+Ainsi $(7,2,9) \in vect ((2,1,3), (1,0,1)).$\\
+\indent
+Vous devez vérifier que le vect de toute famille de vecteurs dans $V$ est un sous-espace de $V$ . Pour être cohérent, nous déclarons que le vect de l'ensemble vide $()$ \'egal \{$0$\} (rappelez-vous que l’ensemble vide n’est pas un sous-espace de $V$).\\
+\indent
+Si $(V_1,\ldots,V_m)$ est une famille de vecteurs dans $V$, alors chaque $V_j$ est une combinaison lin\'eaire de $(V_1,\ldots,V_m)$ (pour montrer cela, d\'efinissez $a_j$=1 et laissez les autres $a$ dans 2.1 \'egal \`a 0).Ainsi vect$(V_1,\ldots,V_m)$ contient chaque $v_j$. Inversement, parce que les sous-espaces sont ferm\'es sous multiplication scalaire et addition, tout sous-espace de $V$ contenant chaque $v_j$ doit contenir vect$(V_1,\ldots,V_m)$. Ainsi, le vect d’une famille de vecteurs dans $V$ est le plus petit sous-espace de V contenant tous les vecteurs de la famille.\\
+\indent
+Si vect$(V_1,\ldots,V_m)$ \'egal $V$, nous disons que $(V_1,\ldots,V_m)$ \textbf{engendre} $V$.Un espace vectoriel est appel\'e \textbf{dimension finie} si quelques familles de vecteurs qu'il contient couvre l'espace. Par exemple, $\K^n$ est une dimension finie parce que 
+\marginpar{\flushright{\textit{Rappelons que, par d\'efinition, chaque famille a une longueur finie.}}}
+\begin{equation*}
+((1,0,\ldots,0),(0,1,0,\ldots,0),(0,\ldots,0,1))
+\end{equation*}
+vects {$F^n$}, comme vous devriez le v\'erifier.\\
+\indent 
+Avant de donner l’exemple suivant d’un espace vectoriel de dimension finie, nous devons d\'efinir le degr\'e d’un polyn\^ome. Un polyn\^ome $p \in P(\K)$ est dit avoir un degr\'e $m$ s’il existe des scalaires $a_0,a_1,\ldots,a_m $ $\in  \K$ avec $a_m \ne$ $0$ tel que
+\begin{equation*}
+ p(z) = a_0 + a_1z +\ldots+ a_mz^m   
+\end{equation*}
+
+
+\pagebreak
+\newpage
+Pour tous les $z \in \K$. Le polynôme qui est identiquement $0$ est dit avoir un degr\'e $-\infty$.\\
+\indent
+Pour m un entier non n\'egatif, soit $P_m(\K)$ l’ensemble de tous les polyn\^omes ayant des coefficients en $\K$ et un degr\'e au plus $m$. Vous devez v\'erifier que $P_m(\K)$ est un sous-espace de $P(\K)$ ; par cons\'equent, $P_m(\K)$ est un espace vectoriel. Cet espace vectoriel est de dimension finie car il est couvert par la famille $(1,z,\ldots,z^m)$; ici, nous abusons l\'eg\`erement de la notation en laissant $z^k$ désigner une fonction (de même qu’une variable factice).\\
+\marginpar{\flushleft{\textit{Les espaces vectoriels de dimension infinie, que nous ne mentionnerons plus beaucoup, sont le centre d’attention dans la branche des math\'ematiques appel\'ee \textbf{analyse fonctionnelle}. L’analyse fonctionnelle utilise des outils d’analyse et d’alg\`ebre.}}}
+\indent
+Un espace vectoriel qui n’est pas de dimension finie est appel\'e \textbf{dimension infinie}. Par exemple, $P(\K)$. Pour le prouver, consid\'erez n’importe quelle famille d’\'el\'ements de $P(\K)$. Soit $m$ le degr\'e le plus \'elev\'e de l’un des polyn\^omes de la famille consid\'er\'ee (rappelons que par d\'efinition une famille a une longueur finie). Ensuite, chaque polyn\^ome dans le vect de cette liste doit avoir un degr\'e au plus $m$. Ainsi, notre famille ne peut pas engendrer $P(\K)$.  \'Etant donn\'e qu’aucune famille n'engendre $P(\K)$, cet espace vectoriel est de dimension infinie.\\
+\indent
+L’espace vectoriel $\K^\infty$, compos\'e de toutes les s\'equences d’\'el\'ements de $\K$, est \'egalement de dimension infinie, bien que cela soit un peu plus difficile \'a prouver. Vous devriez \^etre en mesure de donner une preuve en utilisant certains des outils que nous allons bient\^ot d\'evelopper.\\
+\indent
+Supposons $v_1,\ldots,v_m$ en $V$ et $V$ en vect$(v_1,\ldots,v_m)$. Par la d\'efinition de vect, il existe $a_1,\ldots,a_m \in \K$ tel que
+\begin{equation*}
+V = a_1V_1+\ldots+a_mV_m.
+\end{equation*}
+Examiner la question de savoir si le choix de a dans l’\'equation ci-dessus est unique. Supposons que $\hat{a}_1,\ldots,\hat{a}_m$ soit un autre ensemble de scalaires tels que
+\begin{equation*}
+    V = \hat{a}_1v_1,\ldots,\hat{a}_mv_m.
+\end{equation*}
+En soustrayant les deux derni\`eres \'equations, nous avons
+\begin{equation*}
+    0 =(a_1 - \hat{a}_1)v_1+\ldots+(a_m - \hat{a}_m)v_m.
+\end{equation*}
+Ainsi, nous avons \'ecrit $0$ comme combinaison lin\'eaire de $(v_1,\ldots,v_m)$. Si la seule façon de le faire est la mani\`ere \'evidente (en utilisant $0$ pour tous les scalaires), alors chaque $a_j - \hat{a}j$ est \'egal \`a $0$, ce qui signifie que chaque $a_j$ est \'egal \`a $\hat{a}j$ (et donc le choix de a \'etait en effet unique). Cette situation est si importante que nous lui donnons un nom sp\'ecial -- l’ind\'ependance lin\'eaire -- que nous d\'efinissons maintenant.\\
+\pagebreak
+\indent
+Une famille $(v_1,\ldots,v_m) $de vecteurs est dit \textbf{libre} si le seul choix de $a_1,\ldots,a_m$ dans $\K$ qui rend $a_1V_1+\ldots+a_mV_m$ \'egal $0$ est $a_1 = \ldots = a_m = 0$. Par exemple,
+\begin{equation*}
+((1,0,0,0),(0,1,0,0),(0,0,1,0))
+\end{equation*}
+\marginpar{\flushright{\textit{La plupart des textes d’alg\`ebre lin\'aire d\'efinissent des ensembles libre au lieu de famille libre. Avec cette d\'efinition, l’ensemble $\{(0,1),(0,1),(1,0)\}$ est libre dans $\K^2$ car il est \'egal \`a l’ensemble ${(0,1),(1,0)}$. Avec notre d\'efinition, la famille $((0,1),(0,1),(1,0))$ n’est pas libre (car $1$ fois le premier vecteur plus $-1$ fois le deuxième vecteur plus $0$ fois le troisième vecteur est \'equivaut \`a $0$). En traitant avec des familles plut\^ot que des ensembles, nous \'eviterons certains probl\`emes associ\'es à l’approche habituelle.}}}
+est libre dans $\K^4$,comme vous devriez le v\'erifier. Le raisonnement du paragraphe pr\'ec\'edent montre que $(v_1,\ldots,v_m)$ est libre si et seulement chaque vecteur dans vect$(v_1,\ldots,v_m)$ n’a qu’une seule repr\'esentation en tant que combinaison lin\'eaire de $(v_1,\ldots,v_m)$.\\
+\indent
+Pour un autre exemple de famille libre, fixez un entier non négatif m. Alors $(1,z,\ldots,z^m)$ est libre dans $P(\K)$. Pour vérifier cela, supposons que $a_0,a_1,\ldots,a_m \in \K$ sont tels que
+\begin{equation*}
+ \bm{2.3}\hspace{2cm}   a_0 + a_1 +\ldots+ a_mz^m = 0
+\end{equation*}
+Pour chaque $z \in \K$. Si au moins un des coefficients $a_0,a_1,\ldots,a_m$ \'etaient non nuls, alors $2.3$ pourraient \^etre satisfaits par au plus $m$ valeurs distinctes de $z$ (si vous n’\^etes pas familier avec ce fait, croyez-le pour l’instant; nous le prouverons au Chapitre $4$); cette contradiction montre que tous les coefficients de $2.3$ sont \'egaux \`a $0$. Par cons\'equent, $(1,z,\ldots,z^m)$ est libre, comme on le pr\'etend.\\
+\indent
+Une famille de vecteurs dans $V$ est appel\'ee \textbf{ li\'ee } si elle n’est pas libre. En d’autres termes, une famille $(v_1,\ldots,v_m)$ de vecteurs dans $V$ est li\'ee s’il existe $a_1,\ldots,a_m \in \K$, pas tous $0$, de sorte que $a_1v_1 +\ldots+ a_mv_m = 0$. Par exemple, $((2,3,1),(1,-1,2),(7,3,8))$ est li\'ee dans $\K^3$ parce que
+\begin{equation*}
+2(2,3,1) + 3(1,-1,2) + (-1)(7,3,8) = (0,0,0).
+\end{equation*}
+Autre exemple, toute liste de vecteurs contenant le vecteur $0$ est li\'ee (pourquoi ?).\\
+\indent
+Vous devez v\'erifier qu’une famille $(V)$ de longueur $1$ est libre si et seulement si $V$ $\ne$ $0$. Vous devez \'egalement v\'erifier qu’une famille de longueur $2$ est libre si et seulement si aucun des deux vecteurs n’est un multiple scalaire de l’autre. Attention : une famille d’arbre de longueur ou plus peut \^etre li\'ee m\^eme si aucun vecteur de la famille n’est un multiple scalaire d’un autre vecteur de la famille, comme le montre l’exemple du paragraphe pr\'ec\'edent.\\
+\indent
+si certains vecteurs sont supprim\'es d’une famille lin\'eairement ind\'ependante, la liste restante est \'egalement lin\'eairement ind\'ependante, comme vous devez le v\'erifier. Pour que cela reste vrai m\^eme si nous supprimons tous les vecteurs, nous d\'eclarons que la liste vide $()$ est linéairement indépendante.\\
+\indent
+Le lemme ci-dessous sera souvent utile. Il indique qu’\'etant donné une liste lin\'eairement d\'ependante de vecteurs, avec le premier vecteur pas z\'ero, l’un des vecteurs est dans le vect des pr\'ec\'edents et en outre nous pouvons jeter ce vecteur sans changer le vect de la liste d’origine.\\
+$ \bm{2.4} \hspace{1cm} \textbf{Lemme de dépendance lin\'eaire} $\\
+Si $(v_1,\ldots,v_m)$ est lin\'eairement ind\'ependant dans $V$, alors il existe $j$ $\in$ $\{2,\ldots,m\}$ tel que les conditions suivantes soient remplies:\\
+(a)\hspace{1cm} $v_j \in$ vect$(v_1,\ldots,v_j{_-}_1)$\\
+(b)\hspace{1cm} Si le $j$\`eme terme est supprim\'e de $(v_1,\ldots,v_m)$, le vect de la famille restante est égale à vect$(v_1,\ldots,v_m)$.\\
+\hspace{1cm}Preuve: Supposons que $(v_1,\ldots,v_m)$ est lin\'eairement d\'ependant dans $V$ et $v_1$ $\ne 0$. Alors il existe $a_1,\ldots,a_m$ $\in \K$, pas tous nul, tel que 
+\begin{equation*}
+    a_1v_1 + \ldots+ a_mv_m = 0.
+\end{equation*}
+Pas tous les $a_2,a_3,\dots,a_m$ peuvent \^etre nuls (parce que $v_1$ $\ne$ $0$). Soit j l’élément le plus grand de $\{2,\ldots,m\}$ tel que $a_j$ $\ne 0$. Alors    
+\begin{equation*}
+    v_j = -\frac{a_1}{a_j}v_1 - \ldots - \frac{a_j{_-}_1}{a_j}v_j{_-}_1,
+\end{equation*}
+prouver(a).\\
+
+\begin{proof}  Pour prouver (b), supposons que $u$ $in$ vect$(v_1,\ldots,v_m)$. Ensuite, il existe $c_1,dots,c_m$ $\in$ $\K$ tel que 
+\begin{equation*}
+    u = c_1v_1 + \ldots + c_mv_m.
+\end{equation*}
+Dans l’équation ci-dessus, nous pouvons remplacer $v_j$ par le c\^ot\'e droit de $2.5$, ce qui montre que $u$ est dans le vect de la famil\marginpar{\flushleft{\textit{Supposons que pour chaque entier positif $m$, il existe une famille lin\'eairement ind\'ependante de $m$ vecteurs dans $V$. Alors ce th\'eor\`eme implique que $V$ est de dimension infinie.}}}le obtenue en supprimant le $j$\`eme terme de $(v_1,\ldots,v_m)$. Ainsi (b) tient.\\
+\end{proof}
+\hspace{1cm}Maintenant, nous arrivons à un résultat clé. Il dit que les listes linéairement indépendantes ne sont jamais plus longues que les listes couvrantes.\\
+\begin{thm}
+Dans un espace vectoriel de dimension finie, la longueur de chaque famille de vecteurs lin\'eairement ind\'ependante est inf\'erieure ou \'egale \`a la longueur de chaque famille de vecteurs couvrant.
+\end{thm}
+
+\begin{proof} Preuve: Supposons que $(u_1,\ldots,u_m)$ est lin\'eairement ind\'ependant dans $V$ et que $(w_1,\dots,w_n)$ spans $V$. Nous devons prouver que $m\le n$. Nous le faisons par le biais du processus en plusieurs \'etapes d\'ecrit ci-dessous; Notez qu’\`a chaque \'etape, nous ajoutons les $u$ et supprimons l’un des $w$.\\
+\textbf{\'Etape 1}
+\begin{indpar}
+La liste $(w_1,\ldots,w_n)$ s’\'etend sur $V$, et donc l’ajout de tout vecteur \`a elle produit une famille lin\'eairement d\'ependante. En particulier, la famille
+\begin{equation*}
+    (u_1,\ldots,u_m)
+\end{equation*}
+est linéairement d\'ependant. Ainsi par le lemme d\'ependant lin\'eaire $(2.4)$, on peut supprimer l’un des $w$ pour que la famille $B$ (de longueur $n$) constitu\'ee de $u_1$ et les $w$ restants s’\'etendent sur $V$.
+\end{indpar}
+
+
+\textbf{\'Etape j} 
+\begin{indpar}
+La famille $B$ (de longueur $n$) \`a partir de l’\'etape $j_1$ s’\'etend $V$, et donc l’ajout de tout vecteur \`a elle produit une famille lin\'eairement d\'ependante. En particulier, la famille de longueur $(n + 1)$ obtenue en joignant $u_j$ \`a $B$, en la plaçant juste apr\`es $u_1,ldots,u_j{_-}_1$, est lin\'eairement d\'ependante. Par le lemme de d\'ependance lin\'eaire (2.4), l’un des vecteurs de cette famille est dans l’\'etendue des pr\'ec\'edents, et comme $(u_1,ldots,u_j)$ est lin\'eairement ind\'ependant, ce vecteur doit \^etre l’un des $w$, pas des $u$. Nous pouvons supprimer ce $w$ de $B$ afin que la nouvelle liste $B$ (de longueur $n$) compos\'ee de $u_1,\ldots,u_j$ et les port\'ees de $w$ restantes $V$.\\
+\end{indpar}
+
+
+Apr\`es l’\'etape $m $, nous avons ajout\'e tous les u et le processus s’arr\^ete. Si, \`a n’importe quelle \'etape, nous ajoutions un $u $ et n’avions plus de $w$ \`a enlever, alors nous aurions une contraction. Il doit donc y avoir au moins autant de $w$ que de $u$.
+\end{proof}
+Notre intuition nous dit que tout espace vectoriel contenu dans un espace vectoriel de dimension finie devrait \'egalement \^etre de dimension finie. Nous prouvons maintenant que cette intuition est correcte.
+\begin{prop}
+Tout sous-espace d’un espace vectoriel de dimension finie est de dimension finie.
+\end{prop}
+\begin{proof}
+Supposons que le sous-espace d’une dimension finie et $U$ est un sous-espace de $V$. Nous devons prouver que $U $ est de dimension finie. Nous le faisons à travers la construction en plusieurs \'etapes suivante.\\
+ \textbf{\'Etape 1}
+\begin{indpar}
+Si $U = \{0\}$, alors $U$ est de dimension finie et nous avons termin\'e. Si $U \ne \{0\}$, alors choisissez un vecteur non nul $v1 \in U$.
+\end{indpar}
+\textbf{\'Etape j}
+\begin{indpar}
+Si U = vect$(v_1,\ldots,v_j{_-}_1)$, alors $U$ est de dimension finie et nous avons termin\'e. Si $U \ne$ vect$(v_1,\ldots,v_j{_-}_1)$, alors choisissez un vecteur $v_j \in U$ tels que 
+\begin{equation*}
+    v_j \notin vect(v_1,\ldots,v_j{_-}_1).
+\end{equation*}
+\end{indpar}
+Apr\`es chaque \'etape, tant que le processus se poursuit, nous avons construit une famille de vecteurs telle qu’aucun vecteur de cette famille ne se trouve dans le vect des vecteurs pr\'ec\'edents. Ainsi, apr\`es chaque \'etape, nous avons construit une famille libre, par le lemme de dépendance linéaire (2.4). Cette famille libre ne peut pas \^etre plus longue que n’importe quelle famille engendrant $V$ (par 2.6), et donc le processus doit finalement se terminer, ce qui signifie que $U $ est de dimension finie.
+\end{proof}
+
+\section*{\textsl{Bases}}
+Une {base} de $V$ est une famille de vecteurs en $V$ qui est linéairement indépendante et engendre $V$. Par exemple,
+\begin{equation*}
+    ((1,0,\ldots,0),(0,1,0,\ldots,0),\ldots,(0,\ldots,0,1))
+\end{equation*}
+est une base de $\F^n$, Appelé la \textbf{base standard} de $\F^n$. En plus de la base standard, $\F^n$ a beaucoup d’autres bases. Par exemple, $((1,2),(3,5))$ est une base de $\F^2$. La famille $((1,2))$ est libre mais n’est pas une base de $\F^2$ car elle n'engendre pas $F^2$. La famille $((1,2),(3,5),(4,7))$ engendre $\F^2$ mais n'est pas une base car elle n'est pas libre. Comme autre exemple,$(1,z,\ldots,z^m)$ est une base de $P_m(\F)$.\\
+\indent
+Les propositions suivantes aident à expliquer pourquoi les bases sont utiles.\\
+$\bm{2.8}$\hspace{0,5cm} \textbf{Proposition:}\hspace{0,25cm} Une famille $(v_1,\ldots,v_n)$ de vecteurs dans $V$ est une base de $V$ si et seulement si chaque $v$ $\in$ $V$ peut être écrit de manière unique sous la forme\\
+$\bm{2.9}\hspace{3cm}$ $v = a_1v_1 +\ldots+ a_nv_n$\\
+O\`u $a_1,\ldots,a_n$ $\in$ $\F$.
+
+\begin{proof}
+Supposons d’abord que $(v_1,\ldots,v_n)$ soit une base de $V$. Soit $v$ $\in$ $V$.\marginpar{\flushleft{\textit{Cette preuve est essentiellement une r\'ep\'etition des id\'ees qui nous ont conduits \`a la d\'efinition de l’ind\'ependance lin\'eaire.}}} Étant donné que $(v_1,ldots,v_n)$ engendre $V$, il existe $a_1,\ldots,a_n$ $\in$ $F$ tel que $2.9$ détient. Pour montrer que la présentation en $2.9$ est unique, supposons que $b_1,\ldots,b_n$ sont des scalaires afin que nous ayons \'egalement
+\begin{equation*}
+    v = b_1v_1 + \ldots + b_nv_n.
+\end{equation*}
+En soustrayant la derni\`ere \'equation de $2,9 $, nous obtenons
+\begin{equation*}
+    0 = (a_1-b_1)v_1 + \ldots + (a_n-b_n)v_n.
+\end{equation*}
+Cela implique que chaque $a_j-b_j = 0$ (parce que $(v_1,\ldots,v_n)$ est libre) et donc $a_1 = b_1, ldots, a_n = b_n$. Nous avons l’unicit\'e souhait\'ee, compl\'etant la preuve dans une direction.\\
+\indent
+Dans l’autre sens, supposons que chaque $v$ $\in$ $V$ puisse \^ etre \'ecrit de mani\`ere unique sous la forme donn\'ee par $2.9$. Cela implique clairement que $(v_1,\ldots,v_n)$ engendre $V$. Pour montrer que $(v_1,\ldots,v_n)$ est libre, Supposons que $a_1,\ldots,a_n$ $\in$ $\F$ sont tels que
+\begin{equation*}
+    0 = a_1v_1 + \ldots + a_nv_n.
+\end{equation*}
+L’unicit\'e de la repr\'esentation $2.9$ (avec $v = 0$) implique que $a_1 = ldots= a_n = 0$. Ainsi, $(v_1,ldots,v_n)$ est libre et est donc une base de $V$.
+\end{proof}
+$\bm{2.10}$
+\begin{thm}
+\indent Chaque famille engendrant un espace vectoriel peut \^etre réduite \`a une base de l’espace vectoriel.
+\end{thm}
+\begin{proof}
+\textbf{\'Etape $1$}
+\begin{indpar}
+Si $v_1 = 0$, supprimer $v_1$ de $B$. Si $v_1 \ne 0$, laisser $B$ inchangé.
+\end{indpar}
+\textbf{\'Etape j}
+\begin{indpar}
+Si $v_j$ est dans vect$(v_1,\ldots,v_j{_-}_1)$, supprimer $v_j$ de $B$. Si $v_j$ n'est pas dans vect$(v_1,\ldots,v_j{_-}_1)$, laisser $B$ inchang\'e.
+\end{indpar}
+
+
+\indent{Arr\^etez le processus apr\`es l’\'etape n, obtenir une famille $B$. Cette famille $B$ engendre $V$ parce que notre famille d’origine engendrait $B$ et que nous n’avons d\'esapprouv\'e que des vecteurs qui \'etaient d\'ej\`a dans le vect des vecteurs pr\'ec\'edents. Le processus garantit qu’aucun vecteur dans $B$ n’est dans le vect des pr\'ec\'edents. Ainsi $B$ est libre, par le lemme de d`\'ependance lin\'eaire $(2.4)$. Par cons\'equent, $B $ est une base de $V$.}
+\end{proof}
+Consid\'erer la famille 
+\begin{equation*}
+    ((1,2),(3,6),(4,7),(5,9)),
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document} 

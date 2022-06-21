@@ -1,0 +1,145 @@
+\documentclass[12pt]{book}
+\usepackage{stylepackage}
+
+\begin{document}
+\section*{Correction du chapitre 1}
+
+\subsection*{Exercice 1}
+Nous pouvons multiplier le côté gauche de l'équation par $(a-ib)/(a-ib)$. Cela nous donne :
+\begin{equation*}
+    \frac{1}{a+ib}\times\frac{a-ib}{a-ib}=\frac{a}{a^2+b^2}+i\frac{-b}{a^2+b^2}
+\end{equation*}
+\indent
+Nous pouvons maintenant identifier la partie réelle et la partie imaginaire avec le côté droit de l'équation, on obtient donc
+\begin{equation*}
+    c=\frac{a}{a^2+b^2} \textrm{~et~} d=\frac{-b}{a^2+b^2}
+\end{equation*}\\
+
+\subsection*{Exercice 2}
+Pour prouver que $z$ est racine cubique de 1, il suffit de le mettre au cube et de voir si l'on trouve bien 1. En utilisant la formule du binôme de Newton, on trouve facilement :
+\begin{eqnarray*}
+z^3 & = & \left(\frac{-1+i\sqrt{3}}{2}\right)^3\\
+    & = & \left(\frac{-1}{2}\right)^3+3\times\left(\frac{-1}{2}\right)^2\times\frac{i\sqrt{3}}{2}+3\times\frac{-1}{2}\times\left(\frac{i\sqrt{3}}{2}\right)^2+\left(\frac{i\sqrt{3}}{2}\right)^3\\
+    & = & \frac{-1}{8}+\frac{i3\sqrt{3}}{8}+\frac{9}{8}+\frac{-i3\sqrt{3}}{8}\\
+    & = & 1
+\end{eqnarray*}
+
+On trouve en effet que $z$ est une racine cubique de 1.\\
+\textsc{Remarque :} le nombre complexe $z$ est particulier et on l'appelle généralement $j$.
+
+\subsection*{Exercice 3}
+On commence en écrivant $v$ sous la forme explicite : $v=(v_1,\ldots,v_n)$. Ainsi, on a $av=(av_1,\ldots,av_n)$. Résoudre $av=0$ reviens donc à résoudre $(av_1,\ldots,av_n)=(0,\ldots,0)$. On alors le système d'équations suivant :
+\flushleft{
+$$
+    \left\{
+    \begin{array}{l}
+        av_1=0 \\
+        \vdots\\
+        av_n=0\\
+    \end{array}
+    \right.
+$$}
+Pour chaque équation, on a soit $a=0$, soit $v_j=0$. On a donc bien $a=0$ ou $v=0$.
+
+\subsection*{Exercice 4}
+\indent{
+Comme en général $-x$ est l’opposé de $x$, on a $-(-v)$ est l’opposé de $-v$. Or, par définition, $-v$ est lui-même l’opposé de $v$. Par unicité de l’opposé, on trouve que $-(-v)=v$.}
+
+\subsection*{Exercice 5}
+Nous avons 3 propriétés à vérifier pour chaque exemple : que 0 appartienne au sous-ensemble, et que ce sous-ensemble soit stable pour l’addition et la multiplication scalaire.
+
+\begin{description}
+    \item[(a)] $A= \{(x_1,x_2,x_3)\in\F^3:x_1+2x_2+3x_3=0\} $\\
+    $0=(0,0,0)$, or $0+2\times 0+3\times 0=0$, donc $0\in A$\\
+    Soit $x=(x_1,x_2,x_3)\in A$ et $y=(y_1,y_2,y_3)\in A$.\\
+    On a alors $x+y=(x_1+y_1,x_2+y_2,x_3+y_3)$, \\
+    or $(x_1+y_1)+2(x_2+y_2)+3(x_3+y_3)=x_1+2x_2+3x_3+y_1+2y_2+3y_3=0+0=0$, donc $x+y\in A$, ce qui veut dire que $A$ est stable pour l’addition.\\
+    Soit $\lambda \in\F$ et $x=(x_1,x_2,x_3)\in A$.
+    On a alors $\lambda x=(\lambda x_1,\lambda x_2, \lambda x_3)$, donc $\lambda x_1+2\lambda x_2 +3\lambda x_3=\lambda(x_1+2x_2+3x_3)=0)$, donc $\lambda x\in A$, ce qui veut dire que $A$ est stable pour la multiplication scalaire.\\
+    Donc $A$ est bien un sous-espace vectoriel de $\F^3$.\\
+    
+    \item[(b)] $B= \{(x_1,x_2,x_3)\in\F^3:x_1+2x_2+3x_3=4\} $\\
+    $0=(0,0,0)$, or $0+2\times 0+3\times 0=0\ne 4$, donc $0\notin B$.\\
+    Comme $0\notin B$, $B$ n’est pas u sous-espace vectoriel.
+    
+    \item[(c)] $C= \{(x_1,x_2,x_3)\in\F^3:x_1x_2x_3=0\} $\\
+    Prenons $x=(0,1,1)\in C$ et $y=(1,0,0)\in C$.\\
+    On a $x+y=(1,1,1)$, or $1\times 1\times 1=1\ne 0$, donc $x+y\notin C$.\\
+    $C$ n’est pas stable pour l’addition, donc ce n’est pas un sous-espace vectoriel.
+    
+    \item[(d)] $D= \{(x_1,x_2,x_3)\in\F^3:x_1=5x_3\} $\\
+    $0=(0,0,0)$, or $0=5\times 0$, donc $0\in D$\\
+    Soit $x=(x_1,x_2,x_3)\in D$ et $y=(y_1,y_2,y_3)\in D$.\\
+    On a alors $x+y=(x_1+y_1,x_2+y_2,x_3+y_3)$, \\
+    or ($x_1+y_1)=(5x_3+5y_3)=5(x_3+y_3)$, donc $x+y\in D$, ce qui veut dire que $D$ est stable pour l’addition.\\
+    Soit $\lambda \in\F$ et $x=(x_1,x_2,x_3)\in D$.
+    On a alors $\lambda x=(\lambda x_1,\lambda x_2, \lambda x_3)$, donc $(\lambda x_1)=\lambda\times (5x_3)=5\times(\lambda x_3)$, donc $\lambda x\in D$, ce qui veut dire que $D$ est stable pour la multiplication scalaire.\\
+    Donc $D$ est bien un sous-espace vectoriel de $\F^3$.\\
+
+\end{description}
+\subsection*{Exercice 6}
+
+
+\subsection*{Exercice 7}
+Un exemple qui satisfait ces conditions est $\Z^2$ ($\Z$ étant l’ensemble des entiers relatifs.\\
+En effet, si $x=(x_1,x_2)\in\Z^2$ et $y=(y_1,y_2)\in\Z^2$, alors $x+y=(x_1+y_1,x_2+y_2)$. Or $\Z$ est stable pour l’addition donc $x+y\in\Z^2$.\\
+Du plus, si $x=(x_1,x_2)\in\Z^2$, alors $-x(-x_1,-x_2$ appartient également à $\Z^2$.\\
+En revanche, si l’on prend $x=(1,1)\in\Z^2$ et $\lambda=1.5\in\R$, $\lambda x=(1.5,1.5)\notin\Z^2$ ce qui veut dire que $\Z^2$ n’est pas stable pour la multiplication scalaire, ce n’est donc pas un sous-espace vectoriel.
+
+\subsection*{Exercice 8}
+
+Un exemple qui satisfait ces conditions est l’ensemble $E$ définit par :
+\begin{equation*}
+    E=\{u=(x,y): x,y\in\R,\mathrm{~avec~}x\mathrm{~ou~}y\mathrm{~\acute{e}gal~\grave{a}~0}\}
+\end{equation*}
+
+Prouvons que cet ensemble est stable pour la multiplication scalaire. Pour tout $a\in\R$ et $u\in E$, on a 2 cas.\\
+Premièrement, $x=0$ et $y\ne 0$. Dans ce cas, $au=(a0,ay)=(0,ay)$. On voit que $au$ appartient toujours à $E$.\\
+Dans le second cas, $y=0$ et $x\ne 0$. De manière similaire, $au=(ax,a0)=(ax,0)$. Ici aussi, $au$ appartient toujours à $E$.\\
+Ainsi, ce sous-espace de $\R^2$ est bien stable pour la multiplication scalaire.\\
+
+En revanche, si l’on prend $u=(1,0)\in E$ et $v=(0,1)\in E$, alors $u+v=(1,1)\notin E$. Cet ensemble n’est pas stable pour l’addition, ce n’est donc pas un sous-espace vectoriel.
+
+\subsection*{Exercice 9}
+
+Soit $F_1$ et $F_2$ 2 sous-espaces vectoriels de $E$.\\
+Il faut prouver que si $F_1\subset F_2$ (respectivement $F_2\subset F_1$), alors $F_1\cup F_2$ est un sous-espace vectoriel et que si $F_1\cup F_2$ est un sous-espace vectoriel, alors $F_1\subset F_2$ (respectivement $F_2\subset F_1$).\\
+\indent
+Commençons pas la première démonstration.\\
+Si $F_1\subset F_2$ (respectivement $F_2\subset F_1$), alors on a $F_1\cup F_2=F_1$ (respectivement $F_1\cup F_2 = F_2$).\\
+Démontrons maintenant la deuxième partie.\\
+Nous avons $F_1$ et $F_2$ 2 sous-espaces vectoriels de $E$ et $F_1\cup F_2$ un sous-espace vectoriel également.\\
+Prouvons par contradiction que $F_1\subset F_2$ (respectivement $F_2\subset F_1$).\\
+Supposons qu’il existe $x$ tel que $x\in F_1$ et $x\notin F_2$ et $y$ tel que $y\notin F_1$ et $y\in F_2$.\\
+Dans ce cas, est-ce que $x+y\in F_1\cup F_2$ ?\\
+$$
+\begin{array}{rl}
+    \textrm{On a, par exemple,} & z=x+y\in F_1,\\
+    \textrm{alors} & z-x=y\in F_2,\\
+    \textrm{or} & z,x\in F_1,\\
+    \textrm{donc} & y=z-x\in F_1.
+\end{array}
+$$
+Or, par notre hypothèse de départ, $y\notin F_1$. Il y a donc contradiction, et $y$ ne peut pas exister (respectivement $x$), donc $F_2\subset F_1$ (respectivement $F_1\subset F_2$).
+    
+\subsection*{Exercice 10}
+
+Prenons $G=F+F$. Alors $G$ est l’ensemble des vecteurs $x$ pouvant s’écrire sous la forme $x=y+z$, avec $y\in F$ et $z\in F$ (par définition de l’addition de sous-espaces vectoriels). Or, comme $y\in F$ et $z\in F$ et $F$ est un sous-espace vectoriel, alors $y+z\in F$. Ainsi, chaque $x\in F$, donc $G=F+F=F$.
+
+\subsection*{Exercice 11}
+
+
+
+\subsection*{Exercice 12}
+
+
+\subsection*{Exercice 13}
+
+
+\subsection*{Exercice 14}
+
+
+\subsection*{Exercice 15}
+
+
+\end{document}
